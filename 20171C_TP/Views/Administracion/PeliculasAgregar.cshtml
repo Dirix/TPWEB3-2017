@@ -1,0 +1,55 @@
+﻿@{
+    List<_20171C_TP.Models.Genero> ListaDeGeneros= ViewBag.ListaDeGeneros;
+    List<_20171C_TP.Models.Calificacione> ListaDeCalificaciones = ViewBag.ListaDeCalificaciones;
+}
+
+<h2>Peliculas</h2>
+
+<h3>Generos</h3>
+
+
+<body>
+    <div>
+        <form action="PeliculasAgregar" method="post">
+            <fieldset>
+                <legend>Agregar Pelicula</legend>
+
+                <div>Nombre de pelicula</div>
+                <div><input type="text" name="Nombre" value="" /></div>
+
+                <div>Descripcion</div>
+                <div><textarea name="Descripcion" cols="50"></textarea></div>
+
+
+                <div>Duracion</div>
+                <div><input type="text" name="Duracion" value="" /></div>
+
+                <div>Genero</div>
+                    <div>
+                <select name="idGenero">
+                    @foreach(var i in ListaDeGeneros)
+                        {
+                            <option value="@i.IdGenero">@i.Nombre</option> 
+                        }
+                </select>
+                    </div>
+
+                <div>Calificacion</div>
+                    <div>
+                <select name="IdCalificacion">
+                    @foreach(var i in ListaDeCalificaciones)
+                        {
+                        <option value="@i.IdCalificacion">@i.Nombre</option> 
+                        }
+                </select>
+                    </div>
+
+                <div><input type="submit" value="Agregar Pelicula" /></div>
+            </fieldset>
+
+        </form>
+
+
+    </div>
+
+</body>
