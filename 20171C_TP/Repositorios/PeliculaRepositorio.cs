@@ -25,6 +25,33 @@ namespace _20171C_TP.Repositorios
 
                 }
 
+                internal void EditarPelicula(Pelicula pelicula)
+                {
+                    pelicula.Imagen = "Asd";
+
+   
+
+                    MiContexto.Peliculas.FirstOrDefault(e => e.IdPelicula == pelicula.IdPelicula).Nombre = pelicula.Nombre;
+
+
+                    MiContexto.Peliculas.FirstOrDefault(e => e.IdPelicula == pelicula.IdPelicula).Descripcion = pelicula.Descripcion;
+                    MiContexto.Peliculas.FirstOrDefault(e => e.IdPelicula == pelicula.IdPelicula).Imagen = pelicula.Imagen;
+                    MiContexto.Peliculas.FirstOrDefault(e => e.IdPelicula == pelicula.IdPelicula).IdCalificacion = pelicula.IdCalificacion;
+                    MiContexto.Peliculas.FirstOrDefault(e => e.IdPelicula == pelicula.IdPelicula).IdGenero = pelicula.IdGenero;
+                    MiContexto.Peliculas.FirstOrDefault(e => e.IdPelicula == pelicula.IdPelicula).Duracion = pelicula.Duracion;
+
+                    MiContexto.SaveChanges();
+
+
+                }
+
+                internal Pelicula ObtenerPeliculaPorId(int id)
+                {
+
+                    return MiContexto.Peliculas.FirstOrDefault(e => e.IdPelicula == id);
+
+                }
+
 
 
                 internal List<Pelicula> ObtenerListaDePeliculas()

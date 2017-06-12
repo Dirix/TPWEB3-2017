@@ -13,11 +13,16 @@ namespace _20171C_TP.Controllers
         //
         // GET: /Administracion/
 
-            
+
 
         public ActionResult Index()
         {
-            return View();
+            if (Session["usuario"] == null)
+            {
+                return Redirect("../Home/Login");
+            }
+
+            return Redirect("Inicio");
         }
 
         public ActionResult Inicio()
@@ -29,6 +34,10 @@ namespace _20171C_TP.Controllers
 
             return View();
         }
+        
+
+        //Seccion de peliculas
+
 
         public ActionResult Peliculas()
         {
@@ -74,6 +83,114 @@ namespace _20171C_TP.Controllers
 
             return Redirect("Peliculas");
         }
+
+
+        public ActionResult PeliculasEditar(int id)
+        {
+            if (Session["usuario"] == null)
+            {
+                return Redirect("../Home/Login");
+            }
+
+
+
+            ViewBag.ListaDeGeneros = GeneroServicio.generoServicio.ObtenerListaDeGeneros();
+            ViewBag.ListaDeCalificaciones = CalificacioneServicio.calificacioneServicio.ObtenerListaDeGeneros();
+
+            return View(PeliculaServicio.peliculaServicio.ObtenerPeliculaPorId(id));
+        }
+
+        [HttpPost]
+        public ActionResult PeliculasEditar(Pelicula pelicula)
+        {
+            if (Session["usuario"] == null)
+            {
+                return Redirect("../Home/Login");
+            }
+
+            TempData["mensaje"] = "La pelicula ha sido editada exitosamente";
+
+
+            PeliculaServicio.peliculaServicio.EditarPelicula(pelicula);
+
+            ViewBag.ListaPeliculas = PeliculaServicio.peliculaServicio.ObtenerListaDePeliculas();
+
+            return Redirect("../Peliculas");
+        }
+
+
+        //Termina Seccion de Peliculas
+
+
+
+        //Seccion de Sedes
+
+        public ActionResult Sedes()
+        {
+
+
+            if (Session["usuario"] == null)
+            {
+                return Redirect("../Home/Login");
+            }
+            ViewBag.ListaDeSedes = SedeServicio.sedeServicio.ObtenerListaDeSedes();
+
+            return View();
+        }
+
+        public ActionResult SedesAgregar()
+        {
+            if (Session["usuario"] == null)
+            {
+                return Redirect("../Home/Login");
+            }
+
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult SedesAgregar(Sede sede)
+        {
+            if (Session["usuario"] == null)
+            {
+                return Redirect("../Home/Login");
+            }
+
+            SedeServicio.sedeServicio.AgregarSede(sede);
+
+            TempData["mensaje"] = "La sede ha sido agregada exitosamente";
+
+            return Redirect("Sedes");
+
+        }
+
+        public ActionResult SedesEditar(int id)
+        {
+            if (Session["usuario"] == null)
+            {
+                return Redirect("../Home/Login");
+            }
+
+            return View(SedeServicio.sedeServicio.ObtenerSedePorId(id));
+        }
+
+        [HttpPost]
+        public ActionResult SedesEditar(Sede sede)
+        {
+            if (Session["usuario"] == null)
+            {
+                return Redirect("../Home/Login");
+            }
+
+            SedeServicio.sedeServicio.EditarSede(sede);
+
+            TempData["mensaje"] = "La sede ha sido editada exitosamente";
+
+            return Redirect("../Sedes");
+
+        }
+
+
 
     }
 }

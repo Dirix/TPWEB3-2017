@@ -1,0 +1,75 @@
+﻿@model _20171C_TP.Models.Pelicula
+
+@{
+    List<_20171C_TP.Models.Genero> ListaDeGeneros= ViewBag.ListaDeGeneros;
+    List<_20171C_TP.Models.Calificacione> ListaDeCalificaciones = ViewBag.ListaDeCalificaciones;
+}
+
+<h2>Peliculas</h2>
+
+<h3>Generos</h3>
+
+
+<body>
+    <div>
+        <form action="PeliculasEditar" method="post">
+            <fieldset>
+                <legend>Editar Pelicula</legend>
+
+                <div>Nombre de pelicula</div>
+
+                <input type="hidden" name="IdPelicula" value="@Model.IdPelicula" />
+
+                <div><input type="text" name="Nombre" value="@Model.Nombre" /></div>
+
+                <div>Descripcion</div>
+                <div><textarea name="Descripcion" cols="50">@Model.Descripcion</textarea></div>
+
+
+                <div>Duracion</div>
+                <div><input type="text" name="Duracion" value="@Model.Descripcion" /></div>
+
+                <div>Genero</div>
+                    <div>
+                <select name="idGenero">
+                    @foreach(var i in ListaDeGeneros)
+                        {
+                        if (i.IdGenero == Model.IdGenero)
+                            {
+                                <option value="@i.IdGenero" selected="selected">@i.Nombre</option>  
+                            }
+                            else
+                            {
+                                <option value="@i.IdGenero">@i.Nombre</option>   
+                            }                    
+                        }
+                </select>
+                    </div>
+
+                <div>Calificacion</div>
+                    <div>
+                <select name="IdCalificacion">
+                    @foreach(var i in ListaDeCalificaciones)
+                        {
+                            if (i.IdCalificacion == Model.IdCalificacion)
+                            {
+                                <option value="@i.IdCalificacion" selected="selected">@i.Nombre</option>  
+                            }
+                            else
+
+                            {
+                        <option value="@i.IdCalificacion">@i.Nombre</option>
+                            }    
+                        }
+                </select>
+                    </div>
+
+                <div><input type="submit" value="Editar Pelicula" /></div>
+            </fieldset>
+
+        </form>
+            <p><a href="./">Regresar</a></p>
+
+    </div>
+
+</body>

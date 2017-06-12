@@ -6,9 +6,12 @@
 
 <<h4>@TempData["mensaje"]</h4>
 
+    <p><a href="./">Regresar</a></p>
+
 <a href="PeliculasAgregar">Agregar Pelicula</a>
 @foreach (var i in ListaDePeliculas)
 {
-<p>@i.Nombre / @i.Genero.Nombre</p>
+<p>@i.Nombre / @i.Genero.Nombre / <a href="PeliculasEditar/@i.IdPelicula">Editar</a></p>
+
 
 }
