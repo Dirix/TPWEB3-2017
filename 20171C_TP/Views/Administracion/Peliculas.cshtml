@@ -1,0 +1,14 @@
+﻿@{
+    List<_20171C_TP.Models.Pelicula> ListaDePeliculas = ViewBag.ListaPeliculas;
+}
+
+<h2>Lista de peliculas</h2>
+
+<<h4>@TempData["mensaje"]</h4>
+
+<a href="PeliculasAgregar">Agregar Pelicula</a>
+@foreach (var i in ListaDePeliculas)
+{
+<p>@i.Nombre / @i.Genero.Nombre</p>
+
+}
