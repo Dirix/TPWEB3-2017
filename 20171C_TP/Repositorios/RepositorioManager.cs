@@ -13,6 +13,8 @@ namespace _20171C_TP.Repositorios
         public CalificacioneRepositorio Calificaciones { get; set; }
         public GeneroRepositorio Generos { get; set; }
         public SedeRepositorio Sedes { get; set; }
+        public ReservaRepositorio Reservas { get; set; }
+        public CarteleraRepositorio Carteleras { get; set; }
 
         public RepositorioManager()
         {
@@ -20,8 +22,9 @@ namespace _20171C_TP.Repositorios
             Usuarios = new UsuarioRepositorio(ctx);
             Peliculas = new PeliculaRepositorio(ctx);
             Calificaciones = new CalificacioneRepositorio(ctx);
-            Generos = new GeneroRepositorio(ctx);
             Sedes = new SedeRepositorio(ctx);
+            Reservas = new ReservaRepositorio(ctx);
+            Carteleras = new CarteleraRepositorio(ctx);
         }
 
     }

@@ -190,6 +190,28 @@ namespace _20171C_TP.Controllers
 
         }
 
+        //Seccion Carteleras
+
+
+        public ActionResult Carteleras()
+        {
+
+
+            if (Session["usuario"] == null)
+            {
+                return Redirect("../Home/Login");
+            }
+
+            
+
+            //ViewBag.ListaDeSedes = SedeServicio.sedeServicio.ObtenerListaDeSedes();
+
+            //2014-04-04 00:00:00.000
+
+            System.DateTime FechaActual = new DateTime(2016, 4, 4); //MEtenmos manualmente la fecha pero en realidad hay que recibirla
+
+            return View(CarteleraServicio.carteleraServicio.ObtenerListaDeCartelerasPorFecha(FechaActual));
+        }
 
 
     }

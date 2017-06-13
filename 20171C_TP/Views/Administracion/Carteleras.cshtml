@@ -1,0 +1,15 @@
+﻿@model List<_20171C_TP.Models.Cartelera>
+
+<h2>Carteleras</h2>
+
+<h4>@TempData["mensaje"]</h4>
+
+    <p><a href="./">Regresar</a></p>
+
+<a href="#">Agregar Cartelera</a>
+@foreach (var i in @Model)
+{
+<p>@i.Pelicula.Nombre / <a href="#">Editar</a></p>
+
+
+}
