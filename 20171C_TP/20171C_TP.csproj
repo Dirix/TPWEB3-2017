@@ -20,6 +20,7 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -186,12 +187,15 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Content Include="css\bootstrap-select.min.css" />
     <Content Include="css\bootstrap-theme.css" />
     <Content Include="css\bootstrap-theme.min.css" />
     <Content Include="css\bootstrap.css" />
     <Content Include="css\bootstrap.min.css" />
     <Content Include="css\propios.css" />
+    <Content Include="css\_AdministracionLayout.css" />
     <Content Include="Global.asax" />
+    <Content Include="js\bootstrap-select.min.js" />
     <Content Include="js\bootstrap.js" />
     <Content Include="js\bootstrap.min.js" />
     <Content Include="js\demos\demo01.html" />
@@ -281,6 +285,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Administracion\Carteleras.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Administracion\_AdministracionLayout.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\_Navegador.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

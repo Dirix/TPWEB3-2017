@@ -1,4 +1,7 @@
 ﻿@model _20171C_TP.Models.Sede
+@{
+    Layout = "~/Views/Administracion/_AdministracionLayout.cshtml";
+}
 <h2>Sedes</h2>
 
 
@@ -7,26 +10,32 @@
     <div>
         <form action="SedesEditar" method="post">
             <fieldset>
-                <legend>Agregar Sede</legend>
+                <div class="col-sm-6">
+                    <legend>Agregar Sede</legend>
+                    <input type="hidden" name="IdSede" value="@Model.IdSede" />
+                    <div class="form-group">
+                        <label for="name">Nombre de sede</label>
+                            <input type="text" class="form-control" name="Nombre" value="@Model.Nombre" />
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Direccion</label>
+                        <input type="text" class="form-control" name="Direccion" value="@Model.Direccion" />
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Precio</label>
+                        <div><input type="text" class="form-control" name="PrecioGeneral" value="@Model.PrecioGeneral" /></div>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" class="btn btn-info" value="Modificar Sede" />
+                    </div>
+                    <div class="form-group">
+                        <a href="../" class="btn btn-warning">Regresar</a>
+                    </div>
 
-                <input type="hidden" name="IdSede" value="@Model.IdSede" />
-
-                <div>Nombre de sede</div>
-                <div><input type="text" name="Nombre" value="@Model.Nombre" /></div>
-
-                <div>Direccion</div>
-                <div><input type="text" name="Direccion" value="@Model.Direccion" /></div>
-
-
-                <div>Precio</div>
-                <div><input type="text" name="PrecioGeneral" value="@Model.PrecioGeneral" /></div>
-
-                <div><input type="submit" value="Editar Sede" /></div>
+                    </div>
             </fieldset>
 
         </form>
-
-            <p><a href="./">Regresar</a></p>
     </div>
 
 </body>

@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Administracion de cines</title>
+    <link href="../../css/bootstrap.css" rel="stylesheet">
+    <link href="~/css/bootstrap-select.min.css" rel="stylesheet" />
+    <link href="~/css/_AdministracionLayout.css" rel="stylesheet" />
+    <script src="../../js/jquery.min.js"></script>
+    <script src="../../js/bootstrap.min.js"></script>
+    <script src="~/js/bootstrap-select.min.js"></script>
+    <script src="~/js/_AdministracionLayout.js"></script>
+</head>
+
+
+
+<body>
+
+    <div>
+                        @{
+            Html.RenderPartial("../_Navegador");   
+    }
+
+    </div>
+
+    
+
+    <div id="mySidenav" class="sidenav">
+        <a href="/administracion/peliculas">Gestión de Películas</a>
+        <a href="/administracion/carteleras">Gestión de Carteleras</a>
+        <a href="/administracion/sedes">Gestión de Sedes</a>
+        <a href="#">Reporte de Reservas</a>
+    </div>
+
+
+
+    <div id="main">
+
+        @RenderBody()
+    </div>
+
+</body>
+
+</html>

@@ -214,5 +214,16 @@ namespace _20171C_TP.Controllers
         }
 
 
+        public ActionResult cerrarSession()
+        {
+
+
+                Session.Abandon();
+                return Redirect("../Home/Inicio");
+
+        }
+
+
+
     }
 }

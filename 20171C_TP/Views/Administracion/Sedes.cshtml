@@ -2,16 +2,44 @@
     List<_20171C_TP.Models.Sede> ListaDeSedes = ViewBag.ListaDeSedes;
 }
 
-<h2>Lista de peliculas</h2>
-
-<<h4>@TempData["mensaje"]</h4>
-
-    <p><a href="./">Regresar</a></p>
-
-<a href="SedesAgregar">Agregar Sede</a>
-@foreach (var i in ListaDeSedes)
-{
-<p>@i.Nombre / @i.Direccion / @i.PrecioGeneral / <a href="SedesEditar/@i.IdSede">Editar</a></p>
-
+@{
+    Layout = "~/Views/Administracion/_AdministracionLayout.cshtml";
 }
+
+<div class="page-header">
+  <h1>Gestion de sedes <p><small>Crea y modifica la informaciones de las sedes disponibles</small></p></h1>
+</div>
+
+<h4>@TempData["mensaje"]</h4>
+
+
+<div class="form-group">
+    <a href="SedesAgregar" class="btn btn-primary">Agregar Sede</a>
+</div>
+
+<div class="table-responsive">
+    <table class="table">
+        <thead>
+        <th>NOMBRE</th>
+        <th>DIRECCION</th>
+        <th>PRECIO GENERAL</th>
+        <th></th>
+        </thead>
+
+        @foreach (var i in ListaDeSedes)
+        {
+            <tr>
+                <td>@i.Nombre</td>
+                <td>@i.Direccion</td>
+                <td>@i.PrecioGeneral</td>
+                <td><a href="SedesEditar/@i.IdSede" class="btn btn-warning">Editar</a></td>
+            </tr>
+
+
+        }
+
+
+
+    </table>
+</div>
 

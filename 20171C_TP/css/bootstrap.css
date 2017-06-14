@@ -4538,9 +4538,11 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
     margin-right: 0;
   }
 }
+
 .navbar-default {
-  background: linear-gradient(to right, #569FFD, #76B1FE, #569FFD, #76B1FE, #569FFD); /* Standard syntax */
-  border-color: #e7e7e7;
+    z-index: 444;
+    background: linear-gradient(to right, #6b4545, #a94442, #674545, #a04544, #694747);
+    border-color: #333;
 }
 .navbar-default .navbar-brand {
   color: white;

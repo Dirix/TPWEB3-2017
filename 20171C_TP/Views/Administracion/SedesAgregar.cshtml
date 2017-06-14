@@ -1,30 +1,34 @@
-﻿
+﻿@{
+    Layout = "~/Views/Administracion/_AdministracionLayout.cshtml";
+}
 <h2>Sedes</h2>
-
-
-
 <body>
     <div>
         <form action="SedesAgregar" method="post">
             <fieldset>
-                <legend>Agregar Sede</legend>
 
-                <div>Nombre de sede</div>
-                <div><input type="text" name="Nombre" value="" /></div>
-
-                <div>Direccion</div>
-                <div><input type="text" name="Direccion" value="" /></div>
-
-
-                <div>Precio</div>
-                <div><input type="text" name="PrecioGeneral" value="" /></div>
-
-                <div><input type="submit" value="Agregar Sede" /></div>
+                <div class="col-sm-6">
+                    <legend>Agregar Sede</legend>
+                    <div class="form-group">
+                        <label for="name">Nombre de sede</label>
+                        <input type="text" class="form-control" name="Nombre" value="" />
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Direccion</label>
+                        <input type="text" class="form-control" name="Direccion" value="" />
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Precio</label>
+                        <input type="text" class="form-control" name="PrecioGeneral" value="" />
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" class="btn btn-info" value="Agregar Sede" id="submit" />
+                    </div>
+                    <div class="form-group">
+                        <a href="./" class="btn btn-warning">Regresar</a>
+                    </div>
+                </div>
             </fieldset>
-
         </form>
-
-            <p><a href="./">Regresar</a></p>
     </div>
-
 </body>

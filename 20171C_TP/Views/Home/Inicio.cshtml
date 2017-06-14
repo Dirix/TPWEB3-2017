@@ -2,5 +2,21 @@
 
 }
 
-<h1>Inicio</h1>
-<a href="/home/login">Administracion</a>
+	<head>
+	  <meta charset="utf-8">
+	  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	  <title>CineSystem</title>
+	  <link href="../../css/bootstrap.css" rel="stylesheet">
+	  <link href="../../css/main.css" rel="stylesheet">
+	  <script src="../../js/jquery.min.js"></script>
+	  <script src="../../js/bootstrap.min.js"></script>
+	</head>
+
+<body>
+
+    <div>
+                        @{
+            Html.RenderPartial("../_Navegador");   
+    }
+</body>
+    </div>

@@ -74,3 +74,80 @@ E:\UNLAM FACULTAD\Web3\Trabajo Practico\TPWEB3-2017\20171C_TP\bin\es\System.Web.
 E:\UNLAM FACULTAD\Web3\Trabajo Practico\TPWEB3-2017\20171C_TP\obj\Debug\20171C_TP.csprojResolveAssemblyReference.cache
 E:\UNLAM FACULTAD\Web3\Trabajo Practico\TPWEB3-2017\20171C_TP\obj\Debug\20171C_TP.dll
 E:\UNLAM FACULTAD\Web3\Trabajo Practico\TPWEB3-2017\20171C_TP\obj\Debug\20171C_TP.pdb
+C:\Users\ing_e\Desktop\TPWEB3-2017-Repositorio\20171C_TP\bin\20171C_TP.dll.config
+C:\Users\ing_e\Desktop\TPWEB3-2017-Repositorio\20171C_TP\bin\20171C_TP.dll
+C:\Users\ing_e\Desktop\TPWEB3-2017-Repositorio\20171C_TP\bin\20171C_TP.pdb
+C:\Users\ing_e\Desktop\TPWEB3-2017-Repositorio\20171C_TP\bin\EntityFramework.dll
+C:\Users\ing_e\Desktop\TPWEB3-2017-Repositorio\20171C_TP\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\ing_e\Desktop\TPWEB3-2017-Repositorio\20171C_TP\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+C:\Users\ing_e\Desktop\TPWEB3-2017-Repositorio\20171C_TP\bin\Newtonsoft.Json.dll
+C:\Users\ing_e\Desktop\TPWEB3-2017-Repositorio\20171C_TP\bin\System.Net.Http.Formatting.dll
+C:\Users\ing_e\Desktop\TPWEB3-2017-Repositorio\20171C_TP\bin\System.Web.Helpers.dll
+C:\Users\ing_e\Desktop\TPWEB3-2017-Repositorio\20171C_TP\bin\System.Web.Http.dll
+C:\Users\ing_e\Desktop\TPWEB3-2017-Repositorio\20171C_TP\bin\System.Web.Http.WebHost.dll
+C:\Users\ing_e\Desktop\TPWEB3-2017-Repositorio\20171C_TP\bin\System.Web.Mvc.dll
+C:\Users\ing_e\Desktop\TPWEB3-2017-Repositorio\20171C_TP\bin\System.Web.Razor.dll
+C:\Users\ing_e\Desktop\TPWEB3-2017-Repositorio\20171C_TP\bin\System.Web.WebPages.Deployment.dll
+C:\Users\ing_e\Desktop\TPWEB3-2017-Repositorio\20171C_TP\bin\System.Web.WebPages.dll
+C:\Users\ing_e\Desktop\TPWEB3-2017-Repositorio\20171C_TP\bin\System.Web.WebPages.Razor.dll
+C:\Users\ing_e\Desktop\TPWEB3-2017-Repositorio\20171C_TP\bin\EntityFramework.xml
+C:\Users\ing_e\Desktop\TPWEB3-2017-Repositorio\20171C_TP\bin\Newtonsoft.Json.xml
+C:\Users\ing_e\Desktop\TPWEB3-2017-Repositorio\20171C_TP\bin\System.Net.Http.Formatting.xml
+C:\Users\ing_e\Desktop\TPWEB3-2017-Repositorio\20171C_TP\bin\System.Web.Helpers.xml
+C:\Users\ing_e\Desktop\TPWEB3-2017-Repositorio\20171C_TP\bin\System.Web.Http.xml
+C:\Users\ing_e\Desktop\TPWEB3-2017-Repositorio\20171C_TP\bin\System.Web.Http.WebHost.xml
+C:\Users\ing_e\Desktop\TPWEB3-2017-Repositorio\20171C_TP\bin\System.Web.Mvc.xml
+C:\Users\ing_e\Desktop\TPWEB3-2017-Repositorio\20171C_TP\bin\System.Web.Razor.xml
+C:\Users\ing_e\Desktop\TPWEB3-2017-Repositorio\20171C_TP\bin\System.Web.WebPages.xml
+C:\Users\ing_e\Desktop\TPWEB3-2017-Repositorio\20171C_TP\bin\System.Web.WebPages.Deployment.xml
+C:\Users\ing_e\Desktop\TPWEB3-2017-Repositorio\20171C_TP\bin\System.Web.WebPages.Razor.xml
+C:\Users\ing_e\Desktop\TPWEB3-2017-Repositorio\20171C_TP\bin\es\System.Net.Http.Formatting.resources.dll
+C:\Users\ing_e\Desktop\TPWEB3-2017-Repositorio\20171C_TP\bin\es\System.Web.Helpers.resources.dll
+C:\Users\ing_e\Desktop\TPWEB3-2017-Repositorio\20171C_TP\bin\es\System.Web.Http.resources.dll
+C:\Users\ing_e\Desktop\TPWEB3-2017-Repositorio\20171C_TP\bin\es\System.Web.Http.WebHost.resources.dll
+C:\Users\ing_e\Desktop\TPWEB3-2017-Repositorio\20171C_TP\bin\es\System.Web.Mvc.resources.dll
+C:\Users\ing_e\Desktop\TPWEB3-2017-Repositorio\20171C_TP\bin\es\System.Web.Razor.resources.dll
+C:\Users\ing_e\Desktop\TPWEB3-2017-Repositorio\20171C_TP\bin\es\System.Web.WebPages.resources.dll
+C:\Users\ing_e\Desktop\TPWEB3-2017-Repositorio\20171C_TP\bin\es\System.Web.WebPages.Deployment.resources.dll
+C:\Users\ing_e\Desktop\TPWEB3-2017-Repositorio\20171C_TP\bin\es\System.Web.WebPages.Razor.resources.dll
+C:\Users\ing_e\Desktop\TPWEB3-2017-Repositorio\20171C_TP\obj\Debug\20171C_TP.csprojResolveAssemblyReference.cache
+C:\Users\ing_e\Desktop\TPWEB3-2017-Repositorio\20171C_TP\obj\Debug\20171C_TP.dll
+C:\Users\ing_e\Desktop\TPWEB3-2017-Repositorio\20171C_TP\obj\Debug\20171C_TP.pdb
+E:\UNLAM FACULTAD\Web3\Trabajo Practico\TPWEB3-2017\TPWEB3-2017-Repositorio\20171C_TP\bin\20171C_TP.dll
+E:\UNLAM FACULTAD\Web3\Trabajo Practico\TPWEB3-2017\TPWEB3-2017-Repositorio\20171C_TP\bin\20171C_TP.pdb
+E:\UNLAM FACULTAD\Web3\Trabajo Practico\TPWEB3-2017\TPWEB3-2017-Repositorio\20171C_TP\bin\EntityFramework.dll
+E:\UNLAM FACULTAD\Web3\Trabajo Practico\TPWEB3-2017\TPWEB3-2017-Repositorio\20171C_TP\bin\Microsoft.Web.Infrastructure.dll
+E:\UNLAM FACULTAD\Web3\Trabajo Practico\TPWEB3-2017\TPWEB3-2017-Repositorio\20171C_TP\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+E:\UNLAM FACULTAD\Web3\Trabajo Practico\TPWEB3-2017\TPWEB3-2017-Repositorio\20171C_TP\bin\Newtonsoft.Json.dll
+E:\UNLAM FACULTAD\Web3\Trabajo Practico\TPWEB3-2017\TPWEB3-2017-Repositorio\20171C_TP\bin\System.Net.Http.Formatting.dll
+E:\UNLAM FACULTAD\Web3\Trabajo Practico\TPWEB3-2017\TPWEB3-2017-Repositorio\20171C_TP\bin\System.Web.Helpers.dll
+E:\UNLAM FACULTAD\Web3\Trabajo Practico\TPWEB3-2017\TPWEB3-2017-Repositorio\20171C_TP\bin\System.Web.Http.dll
+E:\UNLAM FACULTAD\Web3\Trabajo Practico\TPWEB3-2017\TPWEB3-2017-Repositorio\20171C_TP\bin\System.Web.Http.WebHost.dll
+E:\UNLAM FACULTAD\Web3\Trabajo Practico\TPWEB3-2017\TPWEB3-2017-Repositorio\20171C_TP\bin\System.Web.Mvc.dll
+E:\UNLAM FACULTAD\Web3\Trabajo Practico\TPWEB3-2017\TPWEB3-2017-Repositorio\20171C_TP\bin\System.Web.Razor.dll
+E:\UNLAM FACULTAD\Web3\Trabajo Practico\TPWEB3-2017\TPWEB3-2017-Repositorio\20171C_TP\bin\System.Web.WebPages.Deployment.dll
+E:\UNLAM FACULTAD\Web3\Trabajo Practico\TPWEB3-2017\TPWEB3-2017-Repositorio\20171C_TP\bin\System.Web.WebPages.dll
+E:\UNLAM FACULTAD\Web3\Trabajo Practico\TPWEB3-2017\TPWEB3-2017-Repositorio\20171C_TP\bin\System.Web.WebPages.Razor.dll
+E:\UNLAM FACULTAD\Web3\Trabajo Practico\TPWEB3-2017\TPWEB3-2017-Repositorio\20171C_TP\bin\EntityFramework.xml
+E:\UNLAM FACULTAD\Web3\Trabajo Practico\TPWEB3-2017\TPWEB3-2017-Repositorio\20171C_TP\bin\Newtonsoft.Json.xml
+E:\UNLAM FACULTAD\Web3\Trabajo Practico\TPWEB3-2017\TPWEB3-2017-Repositorio\20171C_TP\bin\System.Net.Http.Formatting.xml
+E:\UNLAM FACULTAD\Web3\Trabajo Practico\TPWEB3-2017\TPWEB3-2017-Repositorio\20171C_TP\bin\System.Web.Helpers.xml
+E:\UNLAM FACULTAD\Web3\Trabajo Practico\TPWEB3-2017\TPWEB3-2017-Repositorio\20171C_TP\bin\System.Web.Http.xml
+E:\UNLAM FACULTAD\Web3\Trabajo Practico\TPWEB3-2017\TPWEB3-2017-Repositorio\20171C_TP\bin\System.Web.Http.WebHost.xml
+E:\UNLAM FACULTAD\Web3\Trabajo Practico\TPWEB3-2017\TPWEB3-2017-Repositorio\20171C_TP\bin\System.Web.Mvc.xml
+E:\UNLAM FACULTAD\Web3\Trabajo Practico\TPWEB3-2017\TPWEB3-2017-Repositorio\20171C_TP\bin\System.Web.Razor.xml
+E:\UNLAM FACULTAD\Web3\Trabajo Practico\TPWEB3-2017\TPWEB3-2017-Repositorio\20171C_TP\bin\System.Web.WebPages.xml
+E:\UNLAM FACULTAD\Web3\Trabajo Practico\TPWEB3-2017\TPWEB3-2017-Repositorio\20171C_TP\bin\System.Web.WebPages.Deployment.xml
+E:\UNLAM FACULTAD\Web3\Trabajo Practico\TPWEB3-2017\TPWEB3-2017-Repositorio\20171C_TP\bin\System.Web.WebPages.Razor.xml
+E:\UNLAM FACULTAD\Web3\Trabajo Practico\TPWEB3-2017\TPWEB3-2017-Repositorio\20171C_TP\bin\es\System.Net.Http.Formatting.resources.dll
+E:\UNLAM FACULTAD\Web3\Trabajo Practico\TPWEB3-2017\TPWEB3-2017-Repositorio\20171C_TP\bin\es\System.Web.Helpers.resources.dll
+E:\UNLAM FACULTAD\Web3\Trabajo Practico\TPWEB3-2017\TPWEB3-2017-Repositorio\20171C_TP\bin\es\System.Web.Http.resources.dll
+E:\UNLAM FACULTAD\Web3\Trabajo Practico\TPWEB3-2017\TPWEB3-2017-Repositorio\20171C_TP\bin\es\System.Web.Http.WebHost.resources.dll
+E:\UNLAM FACULTAD\Web3\Trabajo Practico\TPWEB3-2017\TPWEB3-2017-Repositorio\20171C_TP\bin\es\System.Web.Mvc.resources.dll
+E:\UNLAM FACULTAD\Web3\Trabajo Practico\TPWEB3-2017\TPWEB3-2017-Repositorio\20171C_TP\bin\es\System.Web.Razor.resources.dll
+E:\UNLAM FACULTAD\Web3\Trabajo Practico\TPWEB3-2017\TPWEB3-2017-Repositorio\20171C_TP\bin\es\System.Web.WebPages.resources.dll
+E:\UNLAM FACULTAD\Web3\Trabajo Practico\TPWEB3-2017\TPWEB3-2017-Repositorio\20171C_TP\bin\es\System.Web.WebPages.Deployment.resources.dll
+E:\UNLAM FACULTAD\Web3\Trabajo Practico\TPWEB3-2017\TPWEB3-2017-Repositorio\20171C_TP\bin\es\System.Web.WebPages.Razor.resources.dll
+E:\UNLAM FACULTAD\Web3\Trabajo Practico\TPWEB3-2017\TPWEB3-2017-Repositorio\20171C_TP\obj\Debug\20171C_TP.csprojResolveAssemblyReference.cache
+E:\UNLAM FACULTAD\Web3\Trabajo Practico\TPWEB3-2017\TPWEB3-2017-Repositorio\20171C_TP\obj\Debug\20171C_TP.dll
+E:\UNLAM FACULTAD\Web3\Trabajo Practico\TPWEB3-2017\TPWEB3-2017-Repositorio\20171C_TP\obj\Debug\20171C_TP.pdb

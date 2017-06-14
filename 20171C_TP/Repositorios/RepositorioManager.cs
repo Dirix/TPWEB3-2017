@@ -25,6 +25,7 @@ namespace _20171C_TP.Repositorios
             Sedes = new SedeRepositorio(ctx);
             Reservas = new ReservaRepositorio(ctx);
             Carteleras = new CarteleraRepositorio(ctx);
+            Generos = new GeneroRepositorio(ctx);
         }
 
     }

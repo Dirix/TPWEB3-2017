@@ -2,16 +2,42 @@
     List<_20171C_TP.Models.Pelicula> ListaDePeliculas = ViewBag.ListaPeliculas;
 }
 
-<h2>Lista de peliculas</h2>
-
-<<h4>@TempData["mensaje"]</h4>
-
-    <p><a href="./">Regresar</a></p>
-
-<a href="PeliculasAgregar">Agregar Pelicula</a>
-@foreach (var i in ListaDePeliculas)
-{
-<p>@i.Nombre / @i.Genero.Nombre / <a href="PeliculasEditar/@i.IdPelicula">Editar</a></p>
-
-
+@{
+    Layout = "~/Views/Administracion/_AdministracionLayout.cshtml";
 }
+
+<div class="page-header">
+  <h1>Gestion de peliculas <p><small>Crea y modifica la informacion de las peliculas de las peliculas</small></p></h1>
+</div>
+
+<h4>@TempData["mensaje"]</h4>
+
+<div class="form-group">
+    <a href="PeliculasAgregar" class="btn btn-primary">Agregar Pelicula</a>
+</div>
+
+<div class="table-responsive">
+    <table class="table">
+        <thead>
+            <th>NOMBRE</th>
+            <th>GENERO</th>
+            <th></th>
+        </thead>
+
+        @foreach (var i in ListaDePeliculas)
+        {
+            <tr>
+                <td>@i.Nombre</td>
+                <td>@i.Genero.Nombre</td>
+                <td><a href="PeliculasEditar/@i.IdPelicula" class="btn btn-warning">Editar</a></td>
+            </tr>
+
+ 
+        }
+
+
+
+    </table>
+</div>
+
+

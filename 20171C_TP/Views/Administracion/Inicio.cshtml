@@ -1,11 +1,45 @@
 ﻿@{
-
+    Layout = "~/Views/Administracion/_AdministracionLayout.cshtml";
 }
 
-<h2>Administracion</h2>
 
-<a href="peliculas">Gestión de Películas</a>
+<div class="page-header">
+  <h1>Bienvenido al administrador de cines <p><small>Seleccione la opcion deseada</small></p></h1>
+</div>
 
-<a href="carteleras">Gestión de Carteleras</a>
-<a href="sedes">Gestión de Sedes</a>
-<a href="reportes">Reporte de Reservas</a>
+
+
+<div class="table-responsive">
+    <table class="table">
+        <thead>
+            <th></th>
+            <th></th>
+        </thead>
+
+
+
+            <tr>
+                <td><a href="/administracion/peliculas" class="btn btn-warning">Gestion de Peliculas</a></td>
+                <td>Aqui podras crear y editar la informacion de peliculas</td>
+            </tr>
+
+            <tr>
+                <td><a href="/administracion/carteleras" class="btn btn-warning">Gestión de Carteleras</a></td>
+                <td>Aqui podras crear y editar las carteleras</td>
+            </tr>
+
+            <tr>
+                <td><a href="/administracion/sedes" class="btn btn-warning">Gestión de Sedes</a></td>
+                <td>Aqui podras crear y editar la informacion de las sedes</td>
+            </tr>
+
+            <tr>
+                <td><a href="#" class="btn btn-warning">Reporte de reservas</a></td>
+                <td>Aqui podras ver detalles de las reservas realizadas</td>
+            </tr>    
+
+
+
+
+    </table>
+</div>

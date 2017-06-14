@@ -1,0 +1,72 @@
+﻿
+		<nav class="navbar navbar-default" role="navigation">
+		  <!-- El logotipo y el icono que despliega el menú se agrupan
+			   para mostrarlos mejor en los dispositivos móviles -->
+		  <div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse"
+					data-target=".navbar-ex1-collapse">
+			  <span class="sr-only">Desplegar navegación</span>
+			  <span class="icon-bar"></span>
+			  <span class="icon-bar"></span>
+			  <span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="#">CineSystem</a>
+		  </div>
+		 
+		  <!-- Agrupar los enlaces de navegación -->
+		  <div class="collapse navbar-collapse navbar-ex1-collapse">
+					<ul class="nav navbar-nav">
+					
+					  <!-- li class="active"><a href="#">Revista</a></li> -->
+
+					  <li><a href="#">Cartelera</a></li>
+					  <li><a href="#">Proximos estrenos</a></li>
+					  <li><a href="#">Ubicaciones</a></li>
+					  <li><a href="#">Contacto</a></li>
+					</ul>
+				 
+					<form class="busqueda navbar-left" role="search" action="#" method='get'>
+					  <div class="form-group">
+						<input type="text" class="form-control" placeholder="Buscar" name="busqueda">
+					  </div>
+					  <button type="submit" class="btn btn-default">Buscar</button>
+					</form>
+					
+
+					
+
+					
+
+
+					
+    <!-- Si esta logueado-->
+					
+
+             @if (Session["usuario"] == null)
+            {
+                 
+                 							 <li><a class='log' href='login'>Ingresar como administrador</a></li>
+
+             
+    
+                 
+            }
+
+            
+                          					<div id='search_box'>
+              @if ((Session["usuario"] == null)==false)
+                          {
+
+
+                  		<li><a class='log' href="~/Administracion/Inicio">Panel de administrador</a></li>
+
+                		<li><a class='log' href='cerrarSession'>Cerrar Session</a></li>
+                  
+
+                        }
+
+                                         					</div>
+
+
+		  </div>
+		</nav>
