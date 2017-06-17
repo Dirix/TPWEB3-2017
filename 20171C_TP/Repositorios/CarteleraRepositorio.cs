@@ -13,6 +13,57 @@ namespace _20171C_TP.Repositorios
             
         }
 
+
+        internal bool ComprobarDisponibilidad(Cartelera cartelera)
+        {
+
+            System.DateTime NuevaFechaInicio = cartelera.FechaInicio;
+            System.DateTime NuevaFechaFin = cartelera.FechaFin;
+
+ 
+
+            //Primero verificamos si choco la fecha indicada con otra cartelera
+            if (MiContexto.Carteleras.Any(e => e.FechaInicio <= NuevaFechaInicio && e.FechaFin >= NuevaFechaInicio
+             || e.FechaInicio <= NuevaFechaFin && e.FechaFin >= NuevaFechaFin))
+            {
+
+                //Verificamos si choco con una sede    
+               if (MiContexto.Carteleras.Any(e => e.IdSede == cartelera.IdSede))
+                {
+
+                    //Verificamos si choco con una sala   
+                    if (MiContexto.Carteleras.Any(e => e.NumeroSala == cartelera.NumeroSala))
+                    {
+                        //Verificamos si choco con un horario 
+                        if (MiContexto.Carteleras.Any(e => e.HoraInicio*60 + e.Pelicula.Duracion  >= cartelera.HoraInicio * 60))
+                        {
+                            //Verificamos si choca algun dia
+                            if(MiContexto.Carteleras.Any(e=>e.Lunes==cartelera.Lunes || e.Martes==cartelera.Martes
+                                || e.Miercoles == cartelera.Miercoles || e.Jueves == cartelera.Jueves
+                                || e.Viernes == cartelera.Viernes || e.Sabado == cartelera.Sabado
+                                || e.Domingo == cartelera.Domingo))
+                             {
+                                //Si se cumplio todo es porque no hay disponibilidad
+                                 return false;
+
+                             }
+
+                        }
+
+
+
+                    }
+
+
+                }
+            
+            }
+            return true;
+
+        }
+
+
+
         internal void AgregarCartelera(Cartelera cartelera)
         {
 
@@ -61,23 +112,32 @@ namespace _20171C_TP.Repositorios
            //string dateString = "5/1/2008 8:30:52 AM"; este es el formato que trabaja
             //DateTime FechaActual = DateTime.Parse(FechaActualString, System.Globalization.CultureInfo.InvariantCulture);
 
-            List<Cartelera> ListaDeCartelerasDeLaBusqueda = new List<Cartelera>();
+            //List<Cartelera> ListaDeCartelerasDeLaBusqueda = new List<Cartelera>();
 
-            var lista = from miCartelera in MiContexto.Carteleras where (miCartelera.FechaInicio < FechaActual && miCartelera.FechaFin > FechaActual) select miCartelera;
+            //var lista = from miCartelera in MiContexto.Carteleras where (miCartelera.FechaInicio < FechaActual && miCartelera.FechaFin > FechaActual) select miCartelera;
 
-            foreach (Cartelera miCartelera in lista)
+    //            foreach (Cartelera miCartelera in lista)
             
-            {
-                ListaDeCartelerasDeLaBusqueda.Add(miCartelera);
+      //      {
+        //        ListaDeCartelerasDeLaBusqueda.Add(miCartelera);
 
 
-            }
+       //     }
 
 
-            return ListaDeCartelerasDeLaBusqueda;
+            return MiContexto.Carteleras.Where(e => e.FechaInicio <= FechaActual && e.FechaFin >= FechaActual).ToList();
 
         }
 
+
+        internal List<Cartelera> ObtenerListaDeCartelerasVigentes()
+        {
+
+            System.DateTime FechaActual = System.DateTime.Now;
+                
+            return MiContexto.Carteleras.Where(e => e.FechaInicio <= FechaActual && e.FechaFin >= FechaActual).ToList();
+
+        }
         
 
         internal List<Cartelera> ObtenerListaDeCarteleras()
@@ -86,6 +146,31 @@ namespace _20171C_TP.Repositorios
             return MiContexto.Carteleras.ToList();
 
         }
+
+
+
+        internal List<System.DateTime> ObtenerListaDeFechas(Cartelera cartelera)
+        {
+
+        List<System.DateTime>  ListaDeFechas = new List<System.DateTime> ();
+
+
+            //Si las funciones ya pasaron, no las mostramos y corremos la fecha de inicio a partir de hoy
+        if (cartelera.FechaInicio < System.DateTime.Now)
+        {
+            cartelera.FechaInicio = System.DateTime.Now;
+        }
+
+        for (System.DateTime i = cartelera.FechaInicio; i < cartelera.FechaFin; i = i.AddDays(1))
+            {
+                ListaDeFechas.Add(i);
+            }
+
+        return ListaDeFechas;
+
+        }
+
+ 
 
     }
 }

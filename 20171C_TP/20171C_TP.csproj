@@ -175,13 +175,16 @@
     <Compile Include="Repositorios\ReservaRepositorio.cs" />
     <Compile Include="Repositorios\SedeRepositorio.cs" />
     <Compile Include="Repositorios\UsuarioRepositorio.cs" />
+    <Compile Include="Repositorios\VersioneRepositorio.cs" />
     <Compile Include="Servicios\CalificacioneServicio.cs" />
     <Compile Include="Servicios\CarteleraServicio.cs" />
+    <Compile Include="Servicios\FechaServicio.cs" />
     <Compile Include="Servicios\GeneroServicio.cs" />
     <Compile Include="Servicios\PeliculaServicio.cs" />
     <Compile Include="Servicios\ReservaServicio.cs" />
     <Compile Include="Servicios\SedeServicio.cs" />
     <Compile Include="Servicios\UsuarioServicio.cs" />
+    <Compile Include="Servicios\VersioneServicio.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\FilterConfig.cs" />
@@ -219,7 +222,9 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -291,6 +296,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\_Navegador.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Administracion\CartelerasAgregar2.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Administracion\CartelerasAgregar.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -15,6 +15,7 @@ namespace _20171C_TP.Repositorios
         public SedeRepositorio Sedes { get; set; }
         public ReservaRepositorio Reservas { get; set; }
         public CarteleraRepositorio Carteleras { get; set; }
+        public VersioneRepositorio Versiones { get; set; }
 
         public RepositorioManager()
         {
@@ -26,6 +27,7 @@ namespace _20171C_TP.Repositorios
             Reservas = new ReservaRepositorio(ctx);
             Carteleras = new CarteleraRepositorio(ctx);
             Generos = new GeneroRepositorio(ctx);
+            Versiones = new VersioneRepositorio(ctx);
         }
 
     }

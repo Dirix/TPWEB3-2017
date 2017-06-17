@@ -1,0 +1,99 @@
+﻿@{
+    List<_20171C_TP.Models.Pelicula> ListaDePeliculas = ViewBag.ListaDePeliculas;
+    List<_20171C_TP.Models.Sede> ListaDeSedes = ViewBag.ListaDeSedes;
+    List<_20171C_TP.Models.Versione> ListaDeVersiones = ViewBag.ListaDeVersiones;
+}
+
+@{
+    Layout = "~/Views/Administracion/_AdministracionLayout.cshtml";
+}
+
+<h2>Carteleras</h2>
+
+
+<body>
+    <div>
+        <form action="CartelerasAgregar" method="post">
+            <fieldset>
+                <div class="col-sm-6">
+                    <legend>Agregar Cartelera</legend>
+
+
+
+                    <div class="form-group">
+                        <label for="name">Pelicula</label>
+                        <select name="idPelicula" class="selectpicker" data-live-search="true">
+                            @foreach (var i in ListaDePeliculas)
+                            {
+                                <option value="@i.IdPelicula">@i.Nombre</option>
+                            }
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="name">Version</label>
+                        <select name="IdVersion" class="selectpicker" data-live-search="true">
+                            @foreach (var i in ListaDeVersiones)
+                            {
+                                <option value="@i.IdVersion">@i.Nombre</option>
+                            }
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="name">Sede</label>
+                        <select name="IdSede" class="selectpicker" data-live-search="true">
+                            @foreach (var i in ListaDeSedes)
+                            {
+                                <option value="@i.IdSede">@i.Nombre</option>
+                            }
+                        </select>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="name">Fecha de inicio</label>
+                        <div><input type="text" id="fecha" class="form-control" name="FechaInicio" value="" /></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="name">Fecha de finalizacion</label>
+                        <input type="text" id="fecha" class="form-control" name="FechaFin" value="" />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="name">Sala</label>
+                        <input type="text" class="form-control" name="NumeroSala" value="" />
+                    </div>
+
+                     <div class="form-group">
+                        <label for="name">Horario</label>
+                        <div><input type="text" class="form-control" name="HoraInicio" value="" /></div>
+                    </div>
+
+                     <div class="form-group">
+                        <label for="name">Dias de la funcion</label>
+                        <input name="Lunes" type="checkbox" /> Lunes
+                        <input name="Martes" type="checkbox" /> Martes
+                        <input name="Miercoles" type="checkbox" /> Miercoles
+                        <input name="Jueves" type="checkbox" /> Jueves
+                        <input name="Viernes" type="checkbox" /> Viernes
+                        <input name="Sabado" type="checkbox" /> Sabado
+                        <input name="Domingo" type="checkbox" /> Domingo
+                     </div>
+
+                    <div class="form-group">
+                        <input type="submit" class="btn btn-info" value="Agregar Funcion" />
+                    </div>
+                    <div class="form-group">
+                        <a href="./" class="btn btn-warning">Regresar</a>
+                    </div>
+                </div>
+
+            </fieldset>
+
+        </form>
+
+    </div>
+
+</body>

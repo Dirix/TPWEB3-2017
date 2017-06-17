@@ -1,6 +1,8 @@
 ﻿@model List<_20171C_TP.Models.Cartelera>
 @{
     Layout = "~/Views/Administracion/_AdministracionLayout.cshtml";
+    List<System.DateTime> ListaDeFechas = ViewBag.ListaDeFechas;
+
 }
 
 <div class="page-header">
@@ -9,15 +11,45 @@
 
 <h4>@TempData["mensaje"]</h4>
 
+
+
 <div class="form-group">
-    <a href="#" class="btn btn-primary">Crear Cartelera</a>
+    <a href="CartelerasAgregar" class="btn btn-primary">Agregar Pelicula</a>
 </div>
 
+<div class="table-responsive">
+    <table class="table">
+        <thead>
+            <th>Pelicula</th>
+            <th>Sede</th>
+            <th>Version</th>
+            <th>Hora</th>
+            <th>Fecha de inicio</th>
+            <th>Fecha de finalizacion</th>
+            <th></th>
+        </thead>
+
+        @foreach (var i in @Model)
+        {
+            <tr>
+                <td>@i.Pelicula.Nombre</td>
+                <td>@i.Sede.Nombre</td>
+                <td>@i.Versione.Nombre</td>
+                <td>@i.HoraInicio</td>
+                <td>@i.FechaInicio.ToShortDateString()</td>
+                <td>@i.FechaFin.ToShortDateString()</td>
+                <td><a href="CartelerasEditar/@i.IdCartelera" class="btn btn-warning">Editar</a></td>
+            </tr>
+
+ 
+        }
 
 
-@foreach (var i in @Model)
-{
-<p>@i.Pelicula.Nombre / <a href="#">Editar</a></p>
 
+    </table>
 
-}
+            @foreach (var i in ListaDeFechas)
+            {
+                <p>@i.ToShortDateString() / @i.DayOfWeek</p>
+            }
+</div>

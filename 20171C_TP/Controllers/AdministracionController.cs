@@ -46,7 +46,7 @@ namespace _20171C_TP.Controllers
                 return Redirect("../Home/Login");
             }
             ViewBag.ListaPeliculas = PeliculaServicio.peliculaServicio.ObtenerListaDePeliculas();
-            
+            ViewBag.ListaDeGeneros = GeneroServicio.generoServicio.ObtenerListaDeGeneros();           
 
             return View();
         }
@@ -210,10 +210,69 @@ namespace _20171C_TP.Controllers
 
             System.DateTime FechaActual = new DateTime(2016, 4, 4); //MEtenmos manualmente la fecha pero en realidad hay que recibirla
 
-            return View(CarteleraServicio.carteleraServicio.ObtenerListaDeCartelerasPorFecha(FechaActual));
+            ViewBag.ListaDeGeneros = GeneroServicio.generoServicio.ObtenerListaDeGeneros();
+            ViewBag.ListaDePeliculas = PeliculaServicio.peliculaServicio.ObtenerListaDePeliculas();
+
+            ViewBag.ListaDeFechas = CarteleraServicio.carteleraServicio.ObtenerListaDeFechas(13);
+
+            return View(CarteleraServicio.carteleraServicio.ObtenerListaDeCarteleras());
+
+        }
+
+                            
+        public ActionResult CartelerasAgregar()
+        {
+
+
+            if (Session["usuario"] == null)
+            {
+                return Redirect("../Home/Login");
+            }
+
+
+
+            ViewBag.ListaDeSedes = SedeServicio.sedeServicio.ObtenerListaDeSedes();
+            ViewBag.ListaDePeliculas = PeliculaServicio.peliculaServicio.ObtenerListaDePeliculas();
+            ViewBag.ListaDeVersiones = VersioneServicio.versioneServicio.ObtenerListaDeVersiones();
+
+            return View();
         }
 
 
+        [HttpPost]  
+        public ActionResult CartelerasAgregar(Cartelera cartelera)
+        {
+
+
+            if (Session["usuario"] == null)
+            {
+                return Redirect("../Home/Login");
+            }
+
+            if (!CarteleraServicio.carteleraServicio.ComprobarDisponibilidad(cartelera))
+            {
+                TempData["mensaje"] = "No hay disponibilidad para el periodo, sede y sala seleccionada";
+                return View();
+            }
+
+            System.DateTime FechaInicial = new System.DateTime(2014, 4, 4); //MEtenmos manualmente la fecha pero en realidad hay que recibirla
+            System.DateTime FechaFinal = new System.DateTime(2016, 4, 4); //MEtenmos manualmente la fecha pero en realidad hay que recibirla
+
+            
+            
+            cartelera.FechaInicio = FechaInicial;
+            cartelera.FechaFin = FechaFinal;
+
+            
+            TempData["mensaje"] = "La cartelera ha sido creado exitosamente";
+
+            CarteleraServicio.carteleraServicio.AgregarCartelera(cartelera);
+
+            return Redirect("../Carteleras");
+   
+        }
+
+        //Cerrar Session
         public ActionResult cerrarSession()
         {
 
