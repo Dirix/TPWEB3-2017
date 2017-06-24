@@ -146,6 +146,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Model1.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\MyViewModel.cs" />
     <Compile Include="Models\Pelicula.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -176,6 +177,7 @@
     <Compile Include="Repositorios\SedeRepositorio.cs" />
     <Compile Include="Repositorios\UsuarioRepositorio.cs" />
     <Compile Include="Repositorios\VersioneRepositorio.cs" />
+    <Compile Include="Servicios\ArchivoServicio.cs" />
     <Compile Include="Servicios\CalificacioneServicio.cs" />
     <Compile Include="Servicios\CarteleraServicio.cs" />
     <Compile Include="Servicios\FechaServicio.cs" />
@@ -195,6 +197,8 @@
     <Content Include="css\bootstrap-theme.min.css" />
     <Content Include="css\bootstrap.css" />
     <Content Include="css\bootstrap.min.css" />
+    <Content Include="css\Inicio.css" />
+    <Content Include="css\Login.css" />
     <Content Include="css\propios.css" />
     <Content Include="css\_AdministracionLayout.css" />
     <Content Include="Global.asax" />
@@ -209,6 +213,7 @@
     <Content Include="js\funciones.js" />
     <Content Include="js\jquery.min.js" />
     <Content Include="js\loader.js" />
+    <Content Include="js\Login.js" />
     <Content Include="js\nicEdit.js" />
     <Content Include="js\nicEditorIcons.gif" />
     <Content Include="js\npm.js" />
@@ -237,6 +242,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Upload\Imagenes\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -260,12 +266,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Home\Login.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="css\bootstrap-theme.css.map" />
-    <Content Include="css\bootstrap-theme.min.css.map" />
-    <Content Include="css\bootstrap.css.map" />
-    <Content Include="css\bootstrap.min.css.map" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Administracion\Inicio.cshtml" />
@@ -302,6 +302,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Administracion\CartelerasAgregar.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="css\bootstrap-theme.css.map" />
+    <Content Include="css\bootstrap-theme.min.css.map" />
+    <Content Include="css\bootstrap.css.map" />
+    <Content Include="css\bootstrap.min.css.map" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

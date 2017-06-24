@@ -18,6 +18,7 @@ namespace _20171C_TP.Repositorios
                         internal void AgregarSede(Sede sede)
                         {
 
+
                             MiContexto.Sedes.Add(sede);
                             MiContexto.SaveChanges();
 

@@ -41,6 +41,13 @@ namespace _20171C_TP.Servicios
 
         }
 
+        public List<Pelicula> ObtenerPeliculasDeCarteleraPorFecha()
+        {
+
+            return RepositorioManager.Carteleras.ObtenerPeliculasDeCarteleraPorFecha();
+
+        }
+
         public List<Cartelera> ObtenerListaDeCartelerasVigentes()
         {
 

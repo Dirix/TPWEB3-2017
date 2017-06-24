@@ -1,13 +1,13 @@
 ﻿@{
-
+    List<_20171C_TP.Models.Pelicula> listaPeliculas = ViewBag.listaPeliculas;
 }
 
 	<head>
 	  <meta charset="utf-8">
 	  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	  <title>CineSystem</title>
-	  <link href="../../css/bootstrap.css" rel="stylesheet">
-	  <link href="../../css/main.css" rel="stylesheet">
+	  <link href="~/css/bootstrap.css" rel="stylesheet">
+      <link href="~/css/Inicio.css" rel="stylesheet" />
 	  <script src="../../js/jquery.min.js"></script>
 	  <script src="../../js/bootstrap.min.js"></script>
 	</head>
@@ -15,8 +15,23 @@
 <body>
 
     <div>
-                        @{
-            Html.RenderPartial("../_Navegador");   
-    }
+        @{
+            Html.RenderPartial("../_Navegador");
+        }
+    </div>    
+
+    <ul class="rig columns-4">
+        @foreach (var i in listaPeliculas)
+        {
+
+            <li>
+                <img src="@i.Imagen" />
+                <h3>@i.Nombre</h3>
+                <p>@i.Descripcion</p>
+            </li>
+        }
+
+    </ul>
+
 </body>
-    </div>
+    

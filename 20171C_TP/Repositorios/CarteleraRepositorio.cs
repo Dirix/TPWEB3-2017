@@ -130,6 +130,15 @@ namespace _20171C_TP.Repositorios
         }
 
 
+        internal List<Pelicula> ObtenerPeliculasDeCarteleraPorFecha()
+        {
+
+             List<Pelicula> lista = new List<Pelicula>();
+
+            return lista;
+
+        }
+
         internal List<Cartelera> ObtenerListaDeCartelerasVigentes()
         {
 

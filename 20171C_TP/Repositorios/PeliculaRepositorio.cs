@@ -17,7 +17,7 @@ namespace _20171C_TP.Repositorios
 
                 internal void AgregarPelicula(Pelicula pelicula)
                 {
-                    pelicula.Imagen = "Asd";
+
                     pelicula.FechaCarga = new DateTime(2014, 4, 4);
                     MiContexto.Peliculas.Add(pelicula);
                     MiContexto.SaveChanges();
@@ -27,7 +27,7 @@ namespace _20171C_TP.Repositorios
 
                 internal void EditarPelicula(Pelicula pelicula)
                 {
-                    pelicula.Imagen = "Asd";
+
 
    
 

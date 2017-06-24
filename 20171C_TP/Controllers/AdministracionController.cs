@@ -67,19 +67,39 @@ namespace _20171C_TP.Controllers
         }
 
         [HttpPost]
-        public ActionResult PeliculasAgregar(Pelicula pelicula)
+        public ActionResult PeliculasAgregar(Pelicula pelicula, HttpPostedFileBase file)
         {
             if (Session["usuario"] == null)
             {
                 return Redirect("../Home/Login");
             }
 
-            TempData["mensaje"] = "La pelicula ha sido agregada exitosamente";
 
+
+            //Subimos archivo
+            if (file == null)
+                {
+                    TempData["mensaje"] = "Ocurrio un error con la imagen subida";
+                }
+
+
+            string archivo = (DateTime.Now.ToString("yyyyMMddHHmmss") + "-" + file.FileName).ToLower();
+
+            string directorio = "/Upload/Imagenes/" + archivo;
+
+            archivo = "~/Upload/Imagenes/" + archivo;
+
+            file.SaveAs(Server.MapPath(archivo));
+
+            pelicula.Imagen = directorio;
+
+            //Fin de subida de archivo
 
             PeliculaServicio.peliculaServicio.AgregarPelicula(pelicula);
 
             ViewBag.ListaPeliculas = PeliculaServicio.peliculaServicio.ObtenerListaDePeliculas();
+
+            TempData["mensaje"] = "La pelicula ha sido agregada exitosamente";
 
             return Redirect("Peliculas");
         }
@@ -101,7 +121,7 @@ namespace _20171C_TP.Controllers
         }
 
         [HttpPost]
-        public ActionResult PeliculasEditar(Pelicula pelicula)
+        public ActionResult PeliculasEditar(Pelicula pelicula, HttpPostedFileBase file)
         {
             if (Session["usuario"] == null)
             {
@@ -109,6 +129,25 @@ namespace _20171C_TP.Controllers
             }
 
             TempData["mensaje"] = "La pelicula ha sido editada exitosamente";
+
+            //Subimos archivo
+            if (file == null)
+            {
+                TempData["mensaje"] = "Ocurrio un error con la imagen subida";
+            }
+
+
+            string archivo = (DateTime.Now.ToString("yyyyMMddHHmmss") + "-" + file.FileName).ToLower();
+
+            string directorio = "../Upload/Imagenes/" + archivo;
+
+            archivo = "~/Upload/Imagenes/" + archivo;
+
+            file.SaveAs(Server.MapPath(archivo));
+
+            pelicula.Imagen = directorio;
+
+            //Fin de subida de archivo
 
 
             PeliculaServicio.peliculaServicio.EditarPelicula(pelicula);

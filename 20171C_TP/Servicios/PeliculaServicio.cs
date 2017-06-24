@@ -13,6 +13,9 @@ namespace _20171C_TP.Servicios
 
         public void AgregarPelicula(Pelicula pelicula)
         {
+
+
+            
             RepositorioManager.Peliculas.AgregarPelicula(pelicula);
 
         }
@@ -29,6 +32,7 @@ namespace _20171C_TP.Servicios
             return RepositorioManager.Peliculas.ObtenerListaDePeliculas();
 
         }
+
 
         public Pelicula ObtenerPeliculaPorId(int id)
         {
