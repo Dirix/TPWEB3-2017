@@ -252,7 +252,7 @@ namespace _20171C_TP.Controllers
             ViewBag.ListaDeGeneros = GeneroServicio.generoServicio.ObtenerListaDeGeneros();
             ViewBag.ListaDePeliculas = PeliculaServicio.peliculaServicio.ObtenerListaDePeliculas();
 
-            ViewBag.ListaDeFechas = CarteleraServicio.carteleraServicio.ObtenerListaDeFechas(13);
+            //ViewBag.ListaDeFechas = CarteleraServicio.carteleraServicio.ObtenerListaDeFechas(13);
 
             return View(CarteleraServicio.carteleraServicio.ObtenerListaDeCarteleras());
 
@@ -295,7 +295,7 @@ namespace _20171C_TP.Controllers
             }
 
             System.DateTime FechaInicial = new System.DateTime(2014, 4, 4); //MEtenmos manualmente la fecha pero en realidad hay que recibirla
-            System.DateTime FechaFinal = new System.DateTime(2016, 4, 4); //MEtenmos manualmente la fecha pero en realidad hay que recibirla
+            System.DateTime FechaFinal = new System.DateTime(2014, 4, 4); //MEtenmos manualmente la fecha pero en realidad hay que recibirla
 
             
             

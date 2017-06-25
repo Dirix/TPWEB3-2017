@@ -1,7 +1,7 @@
 ﻿@model List<_20171C_TP.Models.Cartelera>
 @{
     Layout = "~/Views/Administracion/_AdministracionLayout.cshtml";
-    List<System.DateTime> ListaDeFechas = ViewBag.ListaDeFechas;
+    //List<System.DateTime> ListaDeFechas = ViewBag.ListaDeFechas;
 
 }
 
@@ -48,8 +48,5 @@
 
     </table>
 
-            @foreach (var i in ListaDeFechas)
-            {
-                <p>@i.ToShortDateString() / @i.DayOfWeek</p>
-            }
+
 </div>

@@ -130,10 +130,29 @@ namespace _20171C_TP.Repositorios
         }
 
 
-        internal List<Pelicula> ObtenerPeliculasDeCarteleraPorFecha()
+        internal List<Pelicula> ObtenerPeliculasPorFecha(System.DateTime FechaActual)
         {
 
              List<Pelicula> lista = new List<Pelicula>();
+
+            //Consulta SQL
+            
+
+            var peliculas = from peliculasCartelera in MiContexto.Carteleras
+                      where peliculasCartelera.FechaFin >= FechaActual
+                      select peliculasCartelera.Pelicula;
+
+
+
+
+                        IEnumerable<Pelicula> ListaDePeliculasEnCarteleras = peliculas.Distinct();
+
+                          foreach(Pelicula i in ListaDePeliculasEnCarteleras)
+                          {
+                              lista.Add(i);
+
+    
+                          }
 
             return lista;
 
@@ -164,6 +183,8 @@ namespace _20171C_TP.Repositorios
         List<System.DateTime>  ListaDeFechas = new List<System.DateTime> ();
 
 
+
+
             //Si las funciones ya pasaron, no las mostramos y corremos la fecha de inicio a partir de hoy
         if (cartelera.FechaInicio < System.DateTime.Now)
         {
@@ -180,6 +201,62 @@ namespace _20171C_TP.Repositorios
         }
 
  
+        internal List<Versione> ObtenerVersionesPorIdPelicula(int idPelicula)
+        {
+
+            List<Versione> ListaDeVersionesDisponibles = new List<Versione>();
+
+
+
+            var versiones = from versionesCartelera in MiContexto.Carteleras
+                            where versionesCartelera.IdPelicula == idPelicula
+                            select versionesCartelera.Versione;
+
+
+
+
+            IEnumerable<Versione> ListaDeVersiones = versiones.Distinct();
+
+            foreach (Versione i in ListaDeVersiones)
+            {
+                ListaDeVersionesDisponibles.Add(i);
+
+
+            }
+
+
+            return ListaDeVersionesDisponibles.ToList();
+
+        }
+
+
+        internal List<Sede> ObtenerSedesPorIdVersionYPelicula(int idVersion, int idPelicula)
+        {
+
+            List<Sede> ListaDeSedesDisponibles = new List<Sede>();
+
+
+
+            var sedes = from sedesCartelera in MiContexto.Carteleras
+                        where sedesCartelera.IdPelicula == idPelicula && sedesCartelera.IdVersion==idVersion
+                        select sedesCartelera.Sede;
+
+
+
+
+            IEnumerable<Sede> ListaDeSedes = sedes.Distinct();
+
+            foreach (Sede i in ListaDeSedes)
+            {
+                ListaDeSedesDisponibles.Add(i);
+
+
+            }
+
+
+            return ListaDeSedesDisponibles.ToList();
+
+        }
 
     }
 }

@@ -1,5 +1,7 @@
-﻿@{
-    List<_20171C_TP.Models.Pelicula> listaPeliculas = ViewBag.listaPeliculas;
+﻿@model List<_20171C_TP.Models.Pelicula>
+
+@{
+    //List<_20171C_TP.Models.Pelicula> listaPeliculas = ViewBag.listaPeliculas;
 }
 
 	<head>
@@ -21,14 +23,15 @@
     </div>    
 
     <ul class="rig columns-4">
-        @foreach (var i in listaPeliculas)
+        @foreach (var i in @Model)
         {
-
+            <a href="~/Peliculas/Reserva/@i.IdPelicula">
             <li>
                 <img src="@i.Imagen" />
                 <h3>@i.Nombre</h3>
                 <p>@i.Descripcion</p>
             </li>
+            </a>
         }
 
     </ul>

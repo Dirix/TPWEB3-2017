@@ -14,6 +14,7 @@ namespace _20171C_TP.Servicios
 
         public void AgregarCartelera(Cartelera cartelera)
         {
+            cartelera.FechaCarga = System.DateTime.Now;
             RepositorioManager.Carteleras.AgregarCartelera(cartelera);
 
         }
@@ -41,10 +42,10 @@ namespace _20171C_TP.Servicios
 
         }
 
-        public List<Pelicula> ObtenerPeliculasDeCarteleraPorFecha()
+        public List<Pelicula> ObtenerPeliculasPorFecha()
         {
 
-            return RepositorioManager.Carteleras.ObtenerPeliculasDeCarteleraPorFecha();
+            return RepositorioManager.Carteleras.ObtenerPeliculasPorFecha(System.DateTime.Now);
 
         }
 
@@ -101,8 +102,20 @@ namespace _20171C_TP.Servicios
 
         }
 
+        public List<Versione> ObtenerVersionesPorIdPelicula(int idPelicula)
+        {
+
+            return RepositorioManager.Carteleras.ObtenerVersionesPorIdPelicula(idPelicula);
+
+        }
 
 
+        public List<Sede> ObtenerSedesPorIdVersionYPelicula(int idVersion, int idPelicula)
+        {
+
+            return RepositorioManager.Carteleras.ObtenerSedesPorIdVersionYPelicula(idVersion,idPelicula);
+
+        }
 
     }
 }
