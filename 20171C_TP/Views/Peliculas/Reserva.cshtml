@@ -1,5 +1,7 @@
 ﻿@model _20171C_TP.Models.Pelicula
 @{
+    List<System.DateTime> Fechas = ViewBag.Fechas;
+    List<System.DateTime> Horarios = ViewBag.Horarios;
     List<_20171C_TP.Models.Versione> ListaDeVersiones = ViewBag.ListaDeVersiones;
 }
 
@@ -13,6 +15,7 @@
     <script src="../../js/bootstrap.min.js"></script>
     <script src="~/js/bootstrap-select.min.js"></script>
     <script src="~/js/_AdministracionLayout.js"></script>
+    <script src="~/js/Reserva.js"></script>
 
 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css" />
@@ -23,46 +26,56 @@
 
     <body>
 
-
-                <script type="text/javascript">
-                    $(document).ready(function () {
-                        $("#idVersione").change(function () {
-                            fillCombo("idSede", $("idVersione").val());
-                        });
-                    });
-
-        </script>
-        
-        
-        <script type="text/javascript">
-            function fillCombo(updateId, value) {
-                $.getJSON("@Url.Action("~/Peliculas/Reserva/ObtenerSedesPorVersion")"
-                    + "/" + value + "/" @Model.IdPelicula,
-                    function (data) {
-                        $("#" + updateId).empty();
-                        $.each(data, function (i, item) {
-                            $("#" + updateId).append("<option id='"
-                               + item.IdSede + "'>" + item.Nombre
-                               + "</option>");
-                        });
-                    });
-            }
-        </script>
-
 <h2>Reserva</h2>
+        <div class="col-sm-6">
+            <div class="form-group">
+                <label for="name">Sedes</label>
+                <select id="versiones" name="idVersione" class="selectpicker" data-live-search="true" onchange="obtenerSedes(@Model.IdPelicula)">
+                    @foreach (var i in ListaDeVersiones)
+                    {
+                        <option value="@i.IdVersion">@i.Nombre</option>
+                    }
+                </select>
+            </div>
 
-                      <select name="idVersione" class="selectpicker" data-live-search="true">
-                            @foreach (var i in ListaDeVersiones)
-                            {
-                                <option value="@i.IdVersion">@i.Nombre</option>
-                            }
-                        </select>
+            <div class="form-group">
+                    <label for="name">Sedes</label>
+                    <select id="sedes" name="idSede" class="form-control">
 
-                      <select name="idSede" class="selectpicker" data-live-search="true">
+                        <option value="0"></option>
 
-                                <option value="0">asd</option>
-     
-                        </select>
-    </body>
+                    </select>
+            </div>
+
+            <div class="form-group">
+                <label for="name">Dias</label>
+                <select id="dias" name="idDias" class="form-control">
+
+                    <option value="0"></option>
+
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="name">Horarios</label>
+                <select id="horarios" name="idHorario" class="form-control">
+
+                    <option value="0"></option>
+
+                </select>
+            </div>
+
+        </div>
+        <p>asd</p>
+        @foreach (var i in Fechas)
+        {
+            <p>@i.DayOfWeek @i.Day/@i.Month @i.Hour</p>
+        }
+        @foreach (var i in Horarios)
+        {
+            <h1>Horarios para el 26 de junio (Prueba)</h1>
+            <p>@i.Hour HS.</p>
+        }
+</body>
 
     </html>

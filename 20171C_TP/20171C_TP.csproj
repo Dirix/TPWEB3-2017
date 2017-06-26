@@ -119,6 +119,7 @@
     <Compile Include="Controllers\ControllerBase.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PeliculasController.cs" />
+    <Compile Include="DTO\SedeDTO.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -218,6 +219,7 @@
     <Content Include="js\nicEdit.js" />
     <Content Include="js\nicEditorIcons.gif" />
     <Content Include="js\npm.js" />
+    <Content Include="js\Reserva.js" />
     <Content Include="Models\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model1.edmx</DependentUpon>
@@ -312,6 +314,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Peliculas\Reserva.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Administracion\FiltrarReservas.cshtml" />
+    <Content Include="Views\Administracion\Reservas.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

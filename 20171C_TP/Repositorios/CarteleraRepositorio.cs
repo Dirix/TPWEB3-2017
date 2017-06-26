@@ -258,5 +258,13 @@ namespace _20171C_TP.Repositorios
 
         }
 
+        internal List<Cartelera> ObtenerCartelerasPorPelicula(System.DateTime FechaActual, int idPelicula, int idSede, int idVersion)
+        {
+
+
+            return MiContexto.Carteleras.Where(e => e.FechaFin >= FechaActual && e.IdPelicula == idPelicula && e.IdSede==idSede && e.IdVersion ==idVersion).ToList();
+
+        }
+
     }
 }

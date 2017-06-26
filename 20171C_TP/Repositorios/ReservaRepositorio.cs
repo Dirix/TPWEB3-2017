@@ -22,6 +22,7 @@ namespace _20171C_TP.Repositorios
 
 
 
+
                         internal List<Reserva> ObtenerListaDeReservas()
                         {
 
@@ -29,22 +30,24 @@ namespace _20171C_TP.Repositorios
 
                         }
 
-                        internal List<Reserva> ObtenerListaDeCartelerasPorFecha(System.DateTime FechaInicio, System.DateTime FechaFinal)
+                        internal List<Reserva> FiltrarReservas(System.DateTime FechaInicio, System.DateTime FechaFinal, string NombrePelicula)
                         {
 
-                            List<Reserva> ListaDeReservasDeLaBusqueda = new List<Reserva>();
+                            List<Reserva> ResultadoDeReservas = new List<Reserva>();
 
-                            var lista = from miReserva in MiContexto.Reservas where (miReserva.FechaCarga > FechaInicio && miReserva.FechaCarga < FechaFinal) select miReserva;
+                            int CantidadElementos=2;
 
-                            foreach (Reserva miReserva in lista)
-                            {
-                                ListaDeReservasDeLaBusqueda.Add(miReserva);
+                            ResultadoDeReservas = MiContexto.Reservas.Where(e => FechaInicio <= e.FechaHoraInicio && FechaFinal >= e.FechaHoraInicio && e.Pelicula.Nombre.Contains(NombrePelicula)).ToList();
 
 
-                            }
+                            return ResultadoDeReservas;
 
+                        }
 
-                            return ListaDeReservasDeLaBusqueda;
+                        internal int ObtenerNumeroDeReservas(System.DateTime FechaInicio, System.DateTime FechaFinal, string NombrePelicula)
+                        {
+
+                            return MiContexto.Reservas.Count(e => FechaInicio <= e.FechaHoraInicio && FechaFinal >= e.FechaHoraInicio && e.Pelicula.Nombre.Contains(NombrePelicula));
 
                         }
                         internal Reserva ObtenerReservaPorId(int id)

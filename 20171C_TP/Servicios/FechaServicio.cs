@@ -70,6 +70,71 @@ namespace _20171C_TP.Servicios
 
         }
 
+    public List<System.DateTime> FiltrarFechasRepetidas(List<System.DateTime> Fechas)
+    {
+
+                   //No repetimos los dias
+
+
+        List<System.DateTime> ListadoDeFechas = new List<System.DateTime>();
+        List<System.DateTime> ResultadoFechas = new List<System.DateTime>();
+       
+            //var DistinctFechas = from Date in ListaDeFechas
+            //            select Date;
+
+
+            foreach (System.DateTime i in Fechas)
+            {
+            ListadoDeFechas.Add(i.Date);
+            }
+
+
+            IEnumerable<System.DateTime> FechasNoRepetidas = ListadoDeFechas.Distinct();
+
+
+
+            foreach (System.DateTime i in FechasNoRepetidas)
+            {
+                ResultadoFechas.Add(i.Date);
+
+
+            }
+            
+            
+
+        
+            return ResultadoFechas;
+
+        }
+
+    public List<System.DateTime> AgregarHora(List<System.DateTime> Fechas, int HoraInicio)
+    {
+
+
+
+        List<System.DateTime> ListadoFechasSinHora = new List<System.DateTime>();
+        List<System.DateTime> ListadoFechasConHora = new List<System.DateTime>();
+
+        foreach (System.DateTime i in Fechas)
+        {
+            ListadoFechasSinHora.Add(i.Date);
+        }
+
+        int cantidadFechas = ListadoFechasSinHora.Count();
+
+        for (int i = 0; i < cantidadFechas; i++)
+        {
+            ListadoFechasConHora.Add(ListadoFechasSinHora.ElementAt(i).AddHours(HoraInicio));
+
+        }
+
+
+
+        return ListadoFechasConHora;
+
+    }
+
+
 
     }
 }

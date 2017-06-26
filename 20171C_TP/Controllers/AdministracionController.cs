@@ -294,21 +294,60 @@ namespace _20171C_TP.Controllers
                 return View();
             }
 
-            System.DateTime FechaInicial = new System.DateTime(2014, 4, 4); //MEtenmos manualmente la fecha pero en realidad hay que recibirla
-            System.DateTime FechaFinal = new System.DateTime(2014, 4, 4); //MEtenmos manualmente la fecha pero en realidad hay que recibirla
+            //System.DateTime FechaInicial = new System.DateTime(2014, 4, 4); //MEtenmos manualmente la fecha pero en realidad hay que recibirla
+            //System.DateTime FechaFinal = new System.DateTime(2014, 4, 4); //MEtenmos manualmente la fecha pero en realidad hay que recibirla
 
+        
             
-            
-            cartelera.FechaInicio = FechaInicial;
-            cartelera.FechaFin = FechaFinal;
+            //cartelera.FechaInicio = FechaInicial;
+            //cartelera.FechaFin = FechaFinal;
 
             
             TempData["mensaje"] = "La cartelera ha sido creado exitosamente";
 
             CarteleraServicio.carteleraServicio.AgregarCartelera(cartelera);
 
-            return Redirect("../Carteleras");
+            return Redirect("~/Administracion/Carteleras");
    
+        }
+
+        public ActionResult Reservas()
+        {
+
+
+
+
+            if (Session["usuario"] == null)
+            {
+                return Redirect("../Home/Login");
+            }
+
+            return View();
+
+        }
+
+        public ActionResult FiltrarReservas(System.DateTime id, System.DateTime id2, string id3)
+        {
+
+            
+
+
+            if (Session["usuario"] == null)
+            {
+                return Redirect("../Home/Login");
+            }
+
+
+            List<Reserva> Reservas = ReservaServicio.reservaServicio.FiltrarReservas(id, id2, id3);
+
+
+            ViewBag.NumeroReservas = Reservas.Count();
+
+
+
+
+            return View(Reservas);
+
         }
 
         //Cerrar Session

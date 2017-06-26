@@ -21,6 +21,9 @@ namespace _20171C_TP.Controllers
         public ActionResult Inicio()
         {
             //return View(CarteleraServicio.carteleraServicio.ObtenerPeliculasDeCarteleraPorFecha());
+
+
+
             return View(CarteleraServicio.carteleraServicio.ObtenerPeliculasPorFecha());
         }
 
