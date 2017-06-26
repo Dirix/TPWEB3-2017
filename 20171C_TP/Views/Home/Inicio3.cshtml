@@ -1,0 +1,41 @@
+﻿@model List<_20171C_TP.Models.Pelicula>
+
+@{
+    List<_20171C_TP.Models.Pelicula> listaPeliculas = ViewBag.listaPeliculas;
+}
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+  <head>
+    <meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
+    <title>Feature Carousel Demonstration Test</title>
+    <link rel="stylesheet" href="~/Feature-Carousel/css/feature-carousel.css" charset="utf-8" />
+    <script src="~/Feature-Carousel/js/jquery-1.7.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="~/Feature-Carousel/js/jquery.featureCarousel.js" type="text/javascript" charset="utf-8"></script>
+    <script src="~/Feature-Carousel/js/crearCarousel.js" type="text/javascript" charset="utf-8"></script>
+  </head>
+  <body>
+  
+
+    <div class="carousel-container">
+    
+      <div id="carousel">
+        <div class="carousel-feature">
+          <a href="#"><img class="carousel-image" alt="Image Caption" src="~/Feature-Carousel/images/sample1.jpg"></a>
+          <div class="carousel-caption">
+            <p>
+              This area is typically used to display captions associated with the images. They are set to hide and fade in on rotation.
+            </p>
+          </div>
+        </div>
+
+
+      </div>
+    
+      <div id="carousel-left"><img src="~/Feature-Carousel/images/arrow-left.png" /></div>
+      <div id="carousel-right"><img src="~/Feature-Carousel/images/arrow-right.png" /></div>
+    </div>
+  
+  </body>
+</html>

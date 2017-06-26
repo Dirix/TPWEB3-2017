@@ -230,6 +230,89 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <Content Include="ryrych-rcarousel\.gitignore" />
+    <Content Include="ryrych-rcarousel\examples\carrusel.js" />
+    <Content Include="ryrych-rcarousel\examples\css\reset.css" />
+    <Content Include="ryrych-rcarousel\examples\css\style.css" />
+    <Content Include="ryrych-rcarousel\examples\css\style2.css" />
+    <Content Include="ryrych-rcarousel\examples\images\001.jpg" />
+    <Content Include="ryrych-rcarousel\examples\images\002.jpg" />
+    <Content Include="ryrych-rcarousel\examples\images\003.jpg" />
+    <Content Include="ryrych-rcarousel\examples\images\004.jpg" />
+    <Content Include="ryrych-rcarousel\examples\images\005.jpg" />
+    <Content Include="ryrych-rcarousel\examples\images\006.jpg" />
+    <Content Include="ryrych-rcarousel\examples\images\007.jpg" />
+    <Content Include="ryrych-rcarousel\examples\images\008.jpg" />
+    <Content Include="ryrych-rcarousel\examples\images\009.jpg" />
+    <Content Include="ryrych-rcarousel\examples\images\010.jpg" />
+    <Content Include="ryrych-rcarousel\examples\images\arrow-bottom.png" />
+    <Content Include="ryrych-rcarousel\examples\images\arrow-left.png" />
+    <Content Include="ryrych-rcarousel\examples\images\arrow-right.png" />
+    <Content Include="ryrych-rcarousel\examples\images\arrow-top.png" />
+    <Content Include="ryrych-rcarousel\examples\images\html_slides\anycontent.png" />
+    <Content Include="ryrych-rcarousel\examples\images\html_slides\browsers.png" />
+    <Content Include="ryrych-rcarousel\examples\images\html_slides\customization.png" />
+    <Content Include="ryrych-rcarousel\examples\images\html_slides\horizontalvertical.png" />
+    <Content Include="ryrych-rcarousel\examples\images\html_slides\jqueryui.png" />
+    <Content Include="ryrych-rcarousel\examples\images\html_slides\multi.png" />
+    <Content Include="ryrych-rcarousel\examples\images\lightbox\01.jpg" />
+    <Content Include="ryrych-rcarousel\examples\images\lightbox\01_thumb.jpg" />
+    <Content Include="ryrych-rcarousel\examples\images\lightbox\02.jpg" />
+    <Content Include="ryrych-rcarousel\examples\images\lightbox\02_thumb.jpg" />
+    <Content Include="ryrych-rcarousel\examples\images\lightbox\03.jpg" />
+    <Content Include="ryrych-rcarousel\examples\images\lightbox\03_thumb.jpg" />
+    <Content Include="ryrych-rcarousel\examples\images\lightbox\04.jpg" />
+    <Content Include="ryrych-rcarousel\examples\images\lightbox\04_thumb.jpg" />
+    <Content Include="ryrych-rcarousel\examples\images\lightbox\05.jpg" />
+    <Content Include="ryrych-rcarousel\examples\images\lightbox\05_thumb.jpg" />
+    <Content Include="ryrych-rcarousel\examples\images\lightbox\06.jpg" />
+    <Content Include="ryrych-rcarousel\examples\images\lightbox\06_thumb.jpg" />
+    <Content Include="ryrych-rcarousel\examples\images\lightbox\07.jpg" />
+    <Content Include="ryrych-rcarousel\examples\images\lightbox\07_thumb.jpg" />
+    <Content Include="ryrych-rcarousel\examples\images\page-off.png" />
+    <Content Include="ryrych-rcarousel\examples\images\page-on.png" />
+    <Content Include="ryrych-rcarousel\examples\js\carrusel.js" />
+    <Content Include="ryrych-rcarousel\examples\rlightbox\css\error_bg.png" />
+    <Content Include="ryrych-rcarousel\examples\rlightbox\css\error_sign.png" />
+    <Content Include="ryrych-rcarousel\examples\rlightbox\css\lightbox.css" />
+    <Content Include="ryrych-rcarousel\examples\rlightbox\css\lightbox.min.css" />
+    <Content Include="ryrych-rcarousel\examples\rlightbox\css\loader.gif" />
+    <Content Include="ryrych-rcarousel\examples\rlightbox\css\panorama.png" />
+    <Content Include="ryrych-rcarousel\examples\rlightbox\css\ui-lightness\images\ui-bg_diagonals-thick_18_b81900_40x40.png" />
+    <Content Include="ryrych-rcarousel\examples\rlightbox\css\ui-lightness\images\ui-bg_diagonals-thick_20_666666_40x40.png" />
+    <Content Include="ryrych-rcarousel\examples\rlightbox\css\ui-lightness\images\ui-bg_flat_10_000000_40x100.png" />
+    <Content Include="ryrych-rcarousel\examples\rlightbox\css\ui-lightness\images\ui-bg_glass_100_f6f6f6_1x400.png" />
+    <Content Include="ryrych-rcarousel\examples\rlightbox\css\ui-lightness\images\ui-bg_glass_100_fdf5ce_1x400.png" />
+    <Content Include="ryrych-rcarousel\examples\rlightbox\css\ui-lightness\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="ryrych-rcarousel\examples\rlightbox\css\ui-lightness\images\ui-bg_gloss-wave_35_f6a828_500x100.png" />
+    <Content Include="ryrych-rcarousel\examples\rlightbox\css\ui-lightness\images\ui-bg_highlight-soft_100_eeeeee_1x100.png" />
+    <Content Include="ryrych-rcarousel\examples\rlightbox\css\ui-lightness\images\ui-bg_highlight-soft_75_ffe45c_1x100.png" />
+    <Content Include="ryrych-rcarousel\examples\rlightbox\css\ui-lightness\images\ui-icons_222222_256x240.png" />
+    <Content Include="ryrych-rcarousel\examples\rlightbox\css\ui-lightness\images\ui-icons_228ef1_256x240.png" />
+    <Content Include="ryrych-rcarousel\examples\rlightbox\css\ui-lightness\images\ui-icons_ef8c08_256x240.png" />
+    <Content Include="ryrych-rcarousel\examples\rlightbox\css\ui-lightness\images\ui-icons_ffd27a_256x240.png" />
+    <Content Include="ryrych-rcarousel\examples\rlightbox\css\ui-lightness\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="ryrych-rcarousel\examples\rlightbox\css\ui-lightness\jquery-ui-1.8.16.custom.css" />
+    <Content Include="ryrych-rcarousel\examples\rlightbox\lib\jquery-1.6.4.js" />
+    <Content Include="ryrych-rcarousel\examples\rlightbox\lib\jquery-1.6.4.min.js" />
+    <Content Include="ryrych-rcarousel\examples\rlightbox\lib\jquery.ui.core.js" />
+    <Content Include="ryrych-rcarousel\examples\rlightbox\lib\jquery.ui.core.min.js" />
+    <Content Include="ryrych-rcarousel\examples\rlightbox\lib\jquery.ui.rlightbox.js" />
+    <Content Include="ryrych-rcarousel\examples\rlightbox\lib\jquery.ui.rlightbox.min.js" />
+    <Content Include="ryrych-rcarousel\examples\rlightbox\lib\jquery.ui.widget.js" />
+    <Content Include="ryrych-rcarousel\examples\rlightbox\lib\jquery.ui.widget.min.js" />
+    <Content Include="ryrych-rcarousel\examples\sitio.html" />
+    <Content Include="ryrych-rcarousel\widget\css\rcarousel.css" />
+    <Content Include="ryrych-rcarousel\widget\img\loader.gif" />
+    <Content Include="ryrych-rcarousel\widget\lib\carrusel.js" />
+    <Content Include="ryrych-rcarousel\widget\lib\jquery-1.7.1.js" />
+    <Content Include="ryrych-rcarousel\widget\lib\jquery-1.7.1.min.js" />
+    <Content Include="ryrych-rcarousel\widget\lib\jquery.ui.core.js" />
+    <Content Include="ryrych-rcarousel\widget\lib\jquery.ui.core.min.js" />
+    <Content Include="ryrych-rcarousel\widget\lib\jquery.ui.rcarousel.js" />
+    <Content Include="ryrych-rcarousel\widget\lib\jquery.ui.rcarousel.min.js" />
+    <Content Include="ryrych-rcarousel\widget\lib\jquery.ui.widget.js" />
+    <Content Include="ryrych-rcarousel\widget\lib\jquery.ui.widget.min.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -318,6 +401,15 @@
   <ItemGroup>
     <Content Include="Views\Administracion\FiltrarReservas.cshtml" />
     <Content Include="Views\Administracion\Reservas.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\Inicio3.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ryrych-rcarousel\examples\images\.directory" />
+    <Content Include="ryrych-rcarousel\examples\images\html_slides\.directory" />
+    <Content Include="ryrych-rcarousel\examples\remote.json" />
+    <Content Include="ryrych-rcarousel\widget\license" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
