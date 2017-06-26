@@ -27,9 +27,8 @@ namespace _20171C_TP.Controllers
 
             List<System.DateTime> Fechas = CarteleraServicio.carteleraServicio.ObtenerLasFechasDePelicula(id,2,1); //idPelicula, idSede y idVersion
 
-            ViewBag.Fechas = Fechas;
 
-            //ViewBag.Fechas = FechaServicio.fechaServicio.FiltrarFechasRepetidas(Fechas); //Para no repetir fechas 
+            ViewBag.Fechas = FechaServicio.fechaServicio.FiltrarFechasRepetidas(Fechas); //Para no repetir fechas 
 
             System.DateTime FechaDePreba = new System.DateTime(2017, 6, 26);
 
