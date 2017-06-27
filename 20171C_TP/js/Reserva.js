@@ -19,11 +19,13 @@ function obtenerSedes(idPelicula) {
 
             for (var int = 0; int < sedes.items.length; int++) {
 
-  
+    
                 $('#sedes').append('<option value="' + sedes.items[int].sedeId + '">' + sedes.items[int].nombreSede + '</option>');
             }
 
-
+            $('#sedes').append('<option disabled selected hidden>Elija una sede </option>');
+            $('#dias').append('<option disabled selected hidden>Elija una fecha </option>');
+            $('#horarios').append('<option disabled selected hidden>Elija un horario </option>');
 
 
         },
@@ -58,6 +60,8 @@ function obtenerFechas(idPelicula) {
             }
 
 
+            $('#dias').append('<option disabled selected hidden>Elija una fecha </option>');
+            $('#horarios').append('<option disabled selected hidden>Elija un horario </option>');
 
 
         },
@@ -93,6 +97,7 @@ function obtenerHoras(idPelicula) {
             }
 
 
+            $('#horarios').append('<option disabled selected hidden>Elija un horario </option>');
 
 
         },
