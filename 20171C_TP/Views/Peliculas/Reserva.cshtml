@@ -4,128 +4,107 @@
     List<System.DateTime> Horarios = ViewBag.Horarios;
     List<_20171C_TP.Models.Versione> ListaDeVersiones = ViewBag.ListaDeVersiones;
     List<_20171C_TP.Models.TiposDocumento> Documentos = ViewBag.TipoDocumentos;
-    int MaximoEntradas = 8;
+ 
     
 }
 
 <html>
     <head>
-                <div>
+
         @{
-            Html.RenderPartial("../_Head");
+         Html.RenderPartial("../_Head");
+         Html.RenderPartial("../_HeadReservas");
         }
 
-    <script src="~/js/_AdministracionLayout.js"></script>
-    <script src="~/js/Reserva.js"></script>
 
 
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 
 
     </head>
 
-    <body>
-
-                   <div>
+    <body style="background-color:black;">
+        <input type="hidden" id="imagenPelicula" value="@Model.Imagen" />
+    <div>
         @{
             Html.RenderPartial("../_Navegador");
         }
     </div> 
-
+        
                 <form action="~/Peliculas/ReservaDatos" method="post">
-    		<nav class="navbar navbar-default" role="navigation">
-		  <!-- El logotipo y el icono que despliega el menú se agrupan
-			   para mostrarlos mejor en los dispositivos móviles -->
-		  <div class="navbar-header">
-			<button type="button" class="navbar-toggle" data-toggle="collapse"
-					data-target=".navbar-ex1-collapse">
-			  <span class="sr-only">Desplegar navegación</span>
-			  <span class="icon-bar"></span>
-			  <span class="icon-bar"></span>
-			  <span class="icon-bar"></span>
-			</button>
-			<a class="navbar-brand" href="#">Opciones</a>
-		  </div>
-		 
-		  <!-- Agregamos los selects -->
+                            <input type="hidden" name="idPelicula" value="@Model.IdPelicula" />
+                        <nav class="navbar navbar-default" role="navigation">
+                            <!-- El logotipo y el icono que despliega el menú se agrupan
+                 para mostrarlos mejor en los dispositivos móviles -->
+                            <div class="navbar-header">
+                                <button type="button" class="navbar-toggle" data-toggle="collapse"
+                                        data-target=".navbar-ex1-collapse">
+                                    <span class="sr-only">Desplegar navegación</span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+                                <a class="navbar-brand" href="#">Opciones</a>
+                            </div>
 
-		  <div class="collapse navbar-collapse navbar-ex1-collapse">
-
-      
-				 
-					<div class="busqueda navbar-left" role="search" action="#" method='get'>
+                            <!-- Agregamos los selects -->
+                            <div class="collapse navbar-collapse navbar-ex1-collapse">
 
 
-                        <input type="hidden" name="idPelicula" value="@Model.IdPelicula" />
+                                <div class="busqueda navbar-left" role="search" action="#" method='get'>
 
-                         <select id="versiones" name="idVersion" value="asd" class="form-control"" data-live-search="true" onchange="obtenerSedes(@Model.IdPelicula)">
+                                    <select id="versiones" name="idVersion" value="asd" class="form-control" " data-live-search="true" onchange="obtenerSedes(@Model.IdPelicula)">
+
+                                        <option value="" disabled selected hidden>Elija un idioma</option>
+                                        @foreach (var i in ListaDeVersiones)
+                                        {
+                                            <option value="@i.IdVersion">@i.Nombre</option>
+                                        }
+                                    </select>
+                                    <select id="sedes" name="idSede" class="form-control" " onchange="obtenerFechas(@Model.IdPelicula)">
+                                        <option value="" disabled selected hidden>Elija una sede</option>
+                                    </select>
+                                    <select id="dias" name="FechaString" class="form-control" onchange="obtenerHoras(@Model.IdPelicula)">
+                                        <option value="" disabled selected hidden>Elija una fecha</option>
+                                    </select>
+                                    <select id="horarios" name="HoraInt" class="form-control">
+                                        <option value="" disabled selected hidden>Elija una hora</option>
+                                    </select>
+                                    <input type="submit" class="btn btn-info" value="Reservar entrada" />
+       
+                                </div>
+
+                            </div>
+                        </nav>
+
+
+
+                        <div id="container">
                             
-                            <option value="" disabled selected hidden>Elija un idioma</option>
-                             @foreach (var i in ListaDeVersiones)
-                            {
-                                <option value="@i.IdVersion">@i.Nombre</option>
-                            }
-                        </select>
 
-                        <select id="sedes" name="idSede" class="form-control"" onchange="obtenerFechas(@Model.IdPelicula)" >
-                        <option value="" disabled selected hidden>Elija una sede</option>
-                        </select>
+                        </div>
 
-                        <select id="dias" name="FechaString" class="form-control" onchange="obtenerHoras(@Model.IdPelicula)">
-                        <option value="" disabled selected hidden>Elija una fecha</option>
-                        </select>
+                        <div id="description">
 
-                        <select id="horarios" name="HoraInt" class="form-control">
-                        <option value="" disabled selected hidden>Elija una hora</option>
-                        </select>
 
-                        <input type="submit" class="btn btn-info" value="Comprar" id="submit" />
-
-					</div>
+                           <h1 class="texto">@Model.Nombre</h1>
+   
+                           <p class="texto">Genero: @Model.Genero.Nombre</p>
      
-					
+                           <p class="texto">Duracion: @Model.Duracion minutos</p>
 
-		
+                           <p class="texto">Descripcion:</p>  <div class="panel panel-default">
+                                                <div id="desc" class="panel-body">
+                            @Model.Descripcion
+                                                </div>
+                                            </div>
+                                
 
-		
+                             
 
-            
-
-
-
-		  </div>
-		</nav>
-    
-
+                        </div>
 
 
-        <!-- -->
-<h2>Reserva</h2>
-        <div class="col-sm-6">
-            <!--
-            <div class="form-group">
-                <label for="name">Sedes</label>
-                <select id="versiones" name="idVersione" class="selectpicker" data-live-search="true" onchange="obtenerSedes(@Model.IdPelicula)">
-                    @foreach (var i in ListaDeVersiones)
-                    {
-                        <option value="@i.IdVersion">@i.Nombre</option>
-                    }
-                </select>
-            </div>
-            -->
-
-  
-
-
-
- 
-
-
-     
-        </div>
-
-
+                   
    </form>
 
 </body>

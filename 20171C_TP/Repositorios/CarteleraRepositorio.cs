@@ -14,45 +14,47 @@ namespace _20171C_TP.Repositorios
         }
 
 
-        internal bool ComprobarDisponibilidad(Cartelera cartelera)
+        internal bool ComprobarDisponibilidad(Cartelera cartelera, int duracionPelicula)
         {
 
             System.DateTime NuevaFechaInicio = cartelera.FechaInicio;
             System.DateTime NuevaFechaFin = cartelera.FechaFin;
 
- 
+            int intervaloSinPeliculas = 30;
+            int test = duracionPelicula;
+            int InicioHoraCarteleraRecibida = cartelera.HoraInicio * 60;
+            int FinHoraCarteleraRecibida = cartelera.HoraInicio * 60 + duracionPelicula;
+
+            List<Cartelera> CartelerasFiltradas = new List<Cartelera>();
 
             //Primero verificamos si choco la fecha indicada con otra cartelera
             if (MiContexto.Carteleras.Any(e => e.FechaInicio <= NuevaFechaInicio && e.FechaFin >= NuevaFechaInicio
              || e.FechaInicio <= NuevaFechaFin && e.FechaFin >= NuevaFechaFin))
             {
+                CartelerasFiltradas = MiContexto.Carteleras.Where(e => e.FechaInicio <= NuevaFechaInicio && e.FechaFin >= NuevaFechaInicio
+             || e.FechaInicio <= NuevaFechaFin && e.FechaFin >= NuevaFechaFin).ToList();
 
-                //Verificamos si choco con una sede    
-               if (MiContexto.Carteleras.Any(e => e.IdSede == cartelera.IdSede))
+                //Verificamos si choco con una sede y sala
+                if (CartelerasFiltradas.Any(e => e.IdSede == cartelera.IdSede && e.NumeroSala == cartelera.NumeroSala))
                 {
 
-                    //Verificamos si choco con una sala   
-                    if (MiContexto.Carteleras.Any(e => e.NumeroSala == cartelera.NumeroSala))
-                    {
-                        //Verificamos si choco con un horario 
-                        if (MiContexto.Carteleras.Any(e => e.HoraInicio*60 + e.Pelicula.Duracion  >= cartelera.HoraInicio * 60))
+                        CartelerasFiltradas = CartelerasFiltradas.Where(e => e.IdSede == cartelera.IdSede && e.NumeroSala == cartelera.NumeroSala).ToList();
+
+                        //Verificamos si choco el horario de inicio
+                        if (CartelerasFiltradas.Any(e => e.HoraInicio == cartelera.HoraInicio || e.HoraInicio == cartelera.HoraInicio + 1 || e.HoraInicio == cartelera.HoraInicio - 1))
                         {
-                            //Verificamos si choca algun dia
-                            if(MiContexto.Carteleras.Any(e=>e.Lunes==cartelera.Lunes || e.Martes==cartelera.Martes
-                                || e.Miercoles == cartelera.Miercoles || e.Jueves == cartelera.Jueves
-                                || e.Viernes == cartelera.Viernes || e.Sabado == cartelera.Sabado
-                                || e.Domingo == cartelera.Domingo))
-                             {
-                                //Si se cumplio todo es porque no hay disponibilidad
-                                 return false;
 
-                             }
+       
+                                //Verificamos si choca algun dia --Implementar
+                                 
+                                    //Si se cumplio todo es porque no hay disponibilidad
+                                     return false;
 
+        
                         }
 
 
 
-                    }
 
 
                 }
@@ -102,6 +104,13 @@ namespace _20171C_TP.Repositorios
         {
 
             return MiContexto.Carteleras.FirstOrDefault(e => e.IdCartelera == id);
+
+        }
+
+        internal int ObtenerDuracionPorIdCartelera(int id)
+        {
+
+            return MiContexto.Carteleras.FirstOrDefault(e => e.IdCartelera == id).Pelicula.Duracion;
 
         }
 

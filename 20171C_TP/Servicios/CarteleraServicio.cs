@@ -60,7 +60,9 @@ namespace _20171C_TP.Servicios
         public bool ComprobarDisponibilidad(Cartelera cartelera)
         {
 
-            return RepositorioManager.Carteleras.ComprobarDisponibilidad(cartelera);
+            Pelicula pelicula = PeliculaServicio.peliculaServicio.ObtenerPeliculaPorId(cartelera.IdPelicula);
+
+            return RepositorioManager.Carteleras.ComprobarDisponibilidad(cartelera, pelicula.Duracion);
 
         }
  
@@ -69,6 +71,13 @@ namespace _20171C_TP.Servicios
         {
 
             return RepositorioManager.Carteleras.ObtenerCarteleraPorId(id);
+
+        }
+
+        public int ObtenerDuracionPorIdCartelera(int id)
+        {
+
+            return RepositorioManager.Carteleras.ObtenerDuracionPorIdCartelera(id);
 
         }
 
@@ -118,16 +127,18 @@ namespace _20171C_TP.Servicios
         public List<SedeDTO> ObtenerSedesPorIdVersionYPelicula(int idVersion, int idPelicula)
         {
             List<SedeDTO> sedesDTO = new List<SedeDTO>();
-            SedeDTO sede = new SedeDTO();
+
             List<Sede> sedes = RepositorioManager.Carteleras.ObtenerSedesPorIdVersionYPelicula(idVersion,idPelicula);
 
-            foreach (Sede i in sedes) {
+            foreach (var i in sedes) {
+                SedeDTO sede = new SedeDTO();
                 sede.sedeId = i.IdSede;
                 sede.nombreSede = i.Nombre;
                 sede.direccion = i.Direccion;
                 sedesDTO.Add(sede);
 
             }
+
             return sedesDTO;
         }
 

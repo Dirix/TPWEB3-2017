@@ -1,54 +1,113 @@
 ﻿@model _20171C_TP.DTO.PreReservaDTO
 @{
-
-
+    int MaximoEntradas = 8;
+    List<_20171C_TP.Models.TiposDocumento> Documentos = ViewBag.TipoDocumentos;
     Layout = null;
 }
 
-<!DOCTYPE html>
-
 <html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-        @{
-            Html.RenderPartial("../_Head");
-        }
-</head>
-<body>
+    <head>
 
-                       <div>
+        @{
+         Html.RenderPartial("../_Head");
+         Html.RenderPartial("../_HeadReservas");
+        }
+
+
+
+
+
+    </head>
+
+    <body style="background-color:black;">
+
+    <div>
         @{
             Html.RenderPartial("../_Navegador");
         }
     </div> 
+        
 
-    <div>
-        <form action="~/Peliculas/ConfirmarReserva" method="post">
-        <input type="hidden" value="@Model.IdPelicula" name="idPelicula" />
-        <input type="hidden" value="@Model.IdVersion" name="idVersion" />
-        <input type="hidden" value="@Model.IdSede" name="idSede" />
-        <input type="hidden" value="@Model.HoraInt" name="HoraInt" />
-        <input type="hidden" value="@Model.FechaString" name="FechaString" />
+                            <input type="hidden" name="idPelicula" value="@Model.IdPelicula" />
+                        <nav class="navbar navbar-default" role="navigation">
+                            <!-- El logotipo y el icono que despliega el menú se agrupan
+                 para mostrarlos mejor en los dispositivos móviles -->
+                            <div class="navbar-header">
+                                <button type="button" class="navbar-toggle" data-toggle="collapse"
+                                        data-target=".navbar-ex1-collapse">
+                                    <span class="sr-only">Desplegar navegación</span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+                                <a class="navbar-brand" href="#">Opciones</a>
+                            </div>
 
-        <input type="hidden" value="@Model.idTipoDocumento" name="idTipoDocumento" />
-        <input type="hidden" value="@Model.NumeroDocumento" name="NumeroDocumento" />
-        <input type="hidden" value="@Model.Correo" name="Correo" />
-        <input type="hidden" value="@Model.Entradas" name="Entradas" />
+   
+                        </nav>
 
-        <p>@Model.pelicula.Nombre</p>
-        <p>@Model.version.Nombre</p>
-        <p>@Model.sede.Nombre</p>
-        <p>@Model.FechaDate.ToLongDateString()</p>
-        <p>@Model.FechaDate.ToShortTimeString()</p>
 
-        <p>Documento @Model.NumeroDocumento</p>
-        <p>@Model.Correo</p>
-        <p>@Model.Entradas</p>
 
-            <h1>Su reserva ha sido procesada con exito.</h1>        
-            
-            <a href="~/Home/Inicio">Volver al inicio</a>
+                        <div id="container">
+                         
+                                    <input type="hidden" id="imagenPelicula" value="@Model.pelicula.Imagen" />
+                            <br /><br />
+                            <h1 class="texto">Pelicula: @Model.pelicula.Nombre</h1>
+                            <br />
+                            <h1 class="texto">Idioma: @Model.version.Nombre</h1>
+                            <br />
+                            <h1 class="texto">Sede: @Model.sede.Nombre</h1>
+                            <br />
+                            <h1 class="texto">Direccion: @Model.sede.Direccion</h1>
+                            <br />
+                            <h1 class="texto">Fecha: @Model.FechaDate.ToLongDateString()</h1>
+                            <br />
+                            <h1 class="texto">Hora: @Model.FechaDate.ToShortTimeString()</h1>
+
+   
+                               
+
+                        </div>
+
+                        <div id="description">
+
+     
+         
+
+                           <p class="texto">Sus datos:</p>  <div class="panel panel-default">
+                                                <div id="desc" class="panel-body">
+                       <form action="~/Peliculas/ConfirmarReserva" method="post">
+                        <input type="hidden" value="@Model.IdPelicula" name="idPelicula" />
+                        <input type="hidden" value="@Model.IdVersion" name="idVersion" />
+                        <input type="hidden" value="@Model.IdSede" name="idSede" />
+                        <input type="hidden" value="@Model.HoraInt" name="HoraInt" />
+                        <input type="hidden" value="@Model.FechaDate" name="FechaDate" />
+                        <input type="hidden" value="@Model.FechaString" name="FechaString" />
+
+
+
+        
+                        <p class="text">Gracias por reservar en nuestros cines.</p>
+ 
+                        <p class="text">Le informamos que debera presentarse 1 hora antes de la funcion para poder confirmar la compra en el cine</p>
+  
+                        <p class="text">Usted ha reservado @Model.Entradas entradas para la pelicula @Model.pelicula.Nombre</p>
+
+                        <p class="text">Debera presentarse en el cine con su DNI @Model.idTipoDocumento</p>
+
+                        <a href="~/Home/Inicio" class="btn btn-warning">Volver al inicio</a>
         </form>
-    </div>
+                                                </div>
+                                            </div>
+                                
+
+                             
+
+                        </div>
+
+
+
+
 </body>
-</html>
+
+    </html>

@@ -1,0 +1,70 @@
+body {
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+#container {
+	
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    display: inline-block;
+    width: 60%;
+    height: 74%;
+    border-radius: 2%;
+
+}
+
+#description {
+  opacity: 0.95;
+  filter:  alpha(opacity=80);
+    background: url("../../Imagenes/fondo1.jpg");
+    float: right;
+    width: 40%;
+    display: inline-block;
+    padding-top: 3%;
+    padding-right: 3%;
+    padding-left: 3%;
+    height: 74%;
+    word-wrap: break-word;
+    border-radius: 2%;
+}
+
+p.texto {
+    color: white;
+    font: 22px/1 Anton, sans-serif;
+    text-align: left;
+	    color: #000;
+ 
+    text-shadow:
+   -1px -1px 0 #fff,
+    1px -1px 0 #fff,
+   -1px 1px 0 #fff,
+    1px 1px 0 #fff;
+}
+
+h1.texto
+ {
+    color: #DF2121;
+    font: 40px/1 Anton, sans-serif;
+    text-align: left;
+	margin-top: -10px;
+	
+	    text-shadow:
+   -2px -1px 0 black,
+    2px -1px 0 black,
+   -2px 1px 0 black,
+    2px 1px 0 black;
+}
+
+#desc {
+
+    font: 14px/1.5 Anton, sans-serif;
+    text-align: left;
+
+}
+
+.panel{
+	
+	  opacity: 0.75;
+  filter:  alpha(opacity=50);
+}

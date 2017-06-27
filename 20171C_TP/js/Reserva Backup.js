@@ -1,11 +1,4 @@
-$(document).ready(function () {
-
-    var imagen = $("#imagenPelicula").val();
-    $("#container").css("background", "url(" + imagen + ")");
-    $("#container").css("background-repeat", "no-repeat");
-    $("#container").css("background-size", "100% 100%");
-});
-
+﻿
 function obtenerSedes(idPelicula) {
     var idSeleccionada = $("#versiones").find(":selected").val();
 

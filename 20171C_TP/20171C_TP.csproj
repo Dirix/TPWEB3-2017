@@ -206,8 +206,10 @@
     <Content Include="css\Inicio.css" />
     <Content Include="css\Login.css" />
     <Content Include="css\propios.css" />
+    <Content Include="css\Reserva.css" />
     <Content Include="css\_AdministracionLayout.css" />
     <Content Include="Global.asax" />
+    <Content Include="Imagenes\fondo1.jpg" />
     <Content Include="js\bootstrap-select.min.js" />
     <Content Include="js\bootstrap.js" />
     <Content Include="js\bootstrap.min.js" />
@@ -426,6 +428,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Peliculas\ConfirmarReserva.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\_Head.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\_HeadCarrusel.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\_HeadReservas.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

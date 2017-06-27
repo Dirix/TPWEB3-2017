@@ -291,7 +291,7 @@ namespace _20171C_TP.Controllers
             if (!CarteleraServicio.carteleraServicio.ComprobarDisponibilidad(cartelera))
             {
                 TempData["mensaje"] = "No hay disponibilidad para el periodo, sede y sala seleccionada";
-                return View();
+                return Redirect("~/Administracion/Carteleras");
             }
 
             //System.DateTime FechaInicial = new System.DateTime(2014, 4, 4); //MEtenmos manualmente la fecha pero en realidad hay que recibirla
@@ -302,8 +302,14 @@ namespace _20171C_TP.Controllers
             //cartelera.FechaInicio = FechaInicial;
             //cartelera.FechaFin = FechaFinal;
 
+            ViewBag.ListaDeSedes = SedeServicio.sedeServicio.ObtenerListaDeSedes();
+            ViewBag.ListaDePeliculas = PeliculaServicio.peliculaServicio.ObtenerListaDePeliculas();
+            ViewBag.ListaDeVersiones = VersioneServicio.versioneServicio.ObtenerListaDeVersiones();
+
             
             TempData["mensaje"] = "La cartelera ha sido creado exitosamente";
+
+   
 
             CarteleraServicio.carteleraServicio.AgregarCartelera(cartelera);
 

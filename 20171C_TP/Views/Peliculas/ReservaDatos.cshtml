@@ -5,36 +5,86 @@
     Layout = null;
 }
 
-<!DOCTYPE html>
-
 <html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-        @{
-            Html.RenderPartial("../_Head");
-        }
-</head>
-<body>
+    <head>
 
-                       <div>
+        @{
+         Html.RenderPartial("../_Head");
+         Html.RenderPartial("../_HeadReservas");
+        }
+
+
+
+
+
+    </head>
+
+    <body style="background-color:black;">
+
+    <div>
         @{
             Html.RenderPartial("../_Navegador");
         }
     </div> 
+        
 
-    <div>
-        <form action="~/Peliculas/ReservaPreConfirmacion" method="post">
+                            <input type="hidden" name="idPelicula" value="@Model.IdPelicula" />
+                        <nav class="navbar navbar-default" role="navigation">
+                            <!-- El logotipo y el icono que despliega el menú se agrupan
+                 para mostrarlos mejor en los dispositivos móviles -->
+                            <div class="navbar-header">
+                                <button type="button" class="navbar-toggle" data-toggle="collapse"
+                                        data-target=".navbar-ex1-collapse">
+                                    <span class="sr-only">Desplegar navegación</span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+                                <a class="navbar-brand" href="#">Opciones</a>
+                            </div>
+
+   
+                        </nav>
+
+
+
+                        <div id="container">
+                         
+                                    <input type="hidden" id="imagenPelicula" value="@Model.pelicula.Imagen" />
+                            <br /><br />
+                            <h1 class="texto">Pelicula: @Model.pelicula.Nombre</h1>
+                            <br />
+                            <h1 class="texto">Idioma: @Model.version.Nombre</h1>
+                            <br />
+                            <h1 class="texto">Sede: @Model.sede.Nombre</h1>
+                            <br />
+                            <h1 class="texto">Direccion: @Model.sede.Direccion</h1>
+                            <br />
+                            <h1 class="texto">Fecha: @Model.FechaDate.ToLongDateString()</h1>
+                            <br />
+                            <h1 class="texto">Hora: @Model.FechaDate.ToShortTimeString()</h1>
+
+   
+                               
+
+                        </div>
+
+                        <div id="description">
+
+     
+         
+
+                           <p class="texto">Sus datos:</p>  <div class="panel panel-default">
+                                                <div id="desc" class="panel-body">
+                                 <form action="~/Peliculas/ReservaPreConfirmacion" method="post">
         <input type="hidden" value="@Model.IdPelicula" name="idPelicula" />
         <input type="hidden" value="@Model.IdVersion" name="idVersion" />
         <input type="hidden" value="@Model.IdSede" name="idSede" />
         <input type="hidden" value="@Model.HoraInt" name="HoraInt" />
-        <input type="hidden" value="@Model.FechaString" name="FechaString" />
+      <input type="hidden" value="@Model.FechaString" name="FechaString" />
+ 
 
-        <p>@Model.pelicula.Nombre</p>
-        <p>@Model.version.Nombre</p>
-        <p>@Model.sede.Nombre</p>
-        <p>@Model.FechaDate.ToLongDateString()</p>
-        <p>@Model.FechaDate.ToShortTimeString()</p>
+
 
                         <div class="form-group">
                 <select id="idTipoDNI" name="idTipoDocumento" class="form-control">
@@ -61,8 +111,19 @@
                 </select>
             </div>
             
-            <input type="submit" class="btn btn-info" value="Comprar" id="submit" />
+            <input type="submit" class="btn btn-info" value="Reservar" id="submit" />
         </form>
-    </div>
+                                                </div>
+                                            </div>
+                                
+
+                             
+
+                        </div>
+
+
+
+
 </body>
-</html>
+
+    </html>
