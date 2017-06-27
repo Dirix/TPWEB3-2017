@@ -35,73 +35,15 @@
         }
     </div> 
 
-                <form action="SedesAgregar" method="post">
-    		<nav class="navbar navbar-default" role="navigation">
-		  <!-- El logotipo y el icono que despliega el menú se agrupan
-			   para mostrarlos mejor en los dispositivos móviles -->
-		  <div class="navbar-header">
-			<button type="button" class="navbar-toggle" data-toggle="collapse"
-					data-target=".navbar-ex1-collapse">
-			  <span class="sr-only">Desplegar navegación</span>
-			  <span class="icon-bar"></span>
-			  <span class="icon-bar"></span>
-			  <span class="icon-bar"></span>
-			</button>
-			<a class="navbar-brand" href="#">Opciones</a>
-		  </div>
-		 
-		  <!-- Agregamos los selects -->
+        
+                   <div>
+        @{
+            Html.RenderPartial("../_Navegador");
+        }
+    </div> 
 
-		  <div class="collapse navbar-collapse navbar-ex1-collapse">
-
-      
-				 
-					<div class="busqueda navbar-left" role="search" action="#" method='get'>
-
-
-                         <select id="versiones" name="idVersione" value="asd" class="form-control"" data-live-search="true" onchange="obtenerSedes(@Model.IdPelicula)">
-                            
-                            <option value="" disabled selected hidden>Elija un idioma</option>
-                             @foreach (var i in ListaDeVersiones)
-                            {
-                                <option value="@i.IdVersion">@i.Nombre</option>
-                            }
-                        </select>
-
-                        <select id="sedes" name="idSede" class="form-control"" onchange="obtenerFechas(@Model.IdPelicula)" >
-                        <option value="" disabled selected hidden>Elija una sede</option>
-                        </select>
-
-                        <select id="dias" name="idDias" class="form-control" onchange="obtenerHoras(@Model.IdPelicula)">
-                        <option value="" disabled selected hidden>Elija una fecha</option>
-                        </select>
-
-                        <select id="horarios" name="idHorario" class="form-control">
-                        <option value="" disabled selected hidden>Elija una hora</option>
-                        </select>
-
-					</div>
-     
-					
-
-					
-
-		
-
-            
-
-
-
-		  </div>
-		</nav>
-    
-
-
-
-        <!-- -->
 <h2>Reserva</h2>
         <div class="col-sm-6">
-            <!--
             <div class="form-group">
                 <label for="name">Sedes</label>
                 <select id="versiones" name="idVersione" class="selectpicker" data-live-search="true" onchange="obtenerSedes(@Model.IdPelicula)">
@@ -111,13 +53,33 @@
                     }
                 </select>
             </div>
-            -->
 
-  
+            <div class="form-group">
+                    <label for="name">Sedes</label>
+                    <select id="sedes" name="idSede" class="form-control"  onchange="obtenerFechas(@Model.IdPelicula)">
 
+                        <option value="0"></option>
 
+                    </select>
+            </div>
 
- 
+            <div class="form-group">
+                <label for="name">Dias</label>
+                <select id="dias" name="idDias" class="form-control" onchange="obtenerHoras(@Model.IdPelicula)">
+
+                    <option value="0"></option>
+
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="name">Horarios</label>
+                <select id="horarios" name="idHorario" class="form-control">
+
+                    <option value="0"></option>
+
+                </select>
+            </div>
 
             <div class="form-group">
                 <select id="idTipoDNI" name="idTipoDocumento" class="form-control">
@@ -143,11 +105,11 @@
                     }
                 </select>
             </div>
-     
+
         </div>
 
 
-   </form>
+
 
 </body>
 

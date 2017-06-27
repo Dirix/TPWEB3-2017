@@ -1,4 +1,5 @@
 ﻿using _20171C_TP.Controllers;
+using _20171C_TP.DTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -134,7 +135,54 @@ namespace _20171C_TP.Servicios
 
     }
 
+    public List<string> ConvertirAString(List<System.DateTime> Fechas)
+        {
+            List<string> FechasEnString = new List<string>();
 
+            foreach (var i in Fechas)
+             {
+                 FechasEnString.Add(i.ToShortDateString() + " " + i.DayOfWeek);
+
+             }
+
+            return FechasEnString;
+
+        }
+
+    public System.DateTime ConvertirAFecha(String FechaString)
+    {
+
+
+            int dia = Convert.ToInt32(FechaString.Substring(0, 2));
+
+            string test = FechaString.Substring(3, 2);
+
+            int mes = Convert.ToInt32(FechaString.Substring(3, 2));
+            int ano = Convert.ToInt32(FechaString.Substring(6, 4));
+           
+
+            return new DateTime(ano, mes, dia);
+
+    }
+
+    public List<HoraDTO> ConvertirHoraAString(List<System.DateTime> Horarios)
+    {
+        List<HoraDTO> ListaHorarios = new List<HoraDTO>();
+
+        foreach (var i in Horarios)
+        {
+            HoraDTO ObjetoHora = new HoraDTO();
+
+            ObjetoHora.HoraInt = i.Hour;
+            ObjetoHora.HoraString = i.ToShortTimeString();
+
+            ListaHorarios.Add(ObjetoHora);
+
+        }
+
+        return ListaHorarios;
+
+    }
 
     }
 }

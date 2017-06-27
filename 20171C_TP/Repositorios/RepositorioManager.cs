@@ -16,6 +16,7 @@ namespace _20171C_TP.Repositorios
         public ReservaRepositorio Reservas { get; set; }
         public CarteleraRepositorio Carteleras { get; set; }
         public VersioneRepositorio Versiones { get; set; }
+        public TiposDocumentoRepositorio Documentos { get; set; }
 
         public RepositorioManager()
         {
@@ -28,6 +29,7 @@ namespace _20171C_TP.Repositorios
             Carteleras = new CarteleraRepositorio(ctx);
             Generos = new GeneroRepositorio(ctx);
             Versiones = new VersioneRepositorio(ctx);
+            Documentos = new TiposDocumentoRepositorio(ctx);
         }
 
     }

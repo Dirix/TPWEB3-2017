@@ -27,7 +27,7 @@ namespace _20171C_TP.Controllers
 
             List<System.DateTime> Fechas = CarteleraServicio.carteleraServicio.ObtenerLasFechasDePelicula(id,2,1); //idPelicula, idSede y idVersion
 
-
+            ViewBag.TipoDocumentos = TiposDocumentosServicio.tiposDocumentosServicio.ObtenerListaDeTipos();
 
             ViewBag.Fechas = FechaServicio.fechaServicio.FiltrarFechasRepetidas(Fechas); //Para no repetir fechas 
 
@@ -38,12 +38,52 @@ namespace _20171C_TP.Controllers
             return View(PeliculaServicio.peliculaServicio.ObtenerPeliculaPorId(id));
         }
 
-        
+
+        [HttpPost]
+        public ActionResult ReservaDatos(int idPelicula, int idVersion, int idSede, String Fecha, int Hora)
+        {
+
+            return View();
+        }  
+
+
+
+
+
         public JsonResult ObtenerSedesPorVersion(int id, int id2)
         {
             List<SedeDTO> sedes = CarteleraServicio.carteleraServicio.ObtenerSedesPorIdVersionYPelicula(id, id2);
 
             return Json(new { items = sedes }, JsonRequestBehavior.AllowGet);
+        }
+
+        public JsonResult ObtenerFechasPorSedes(int id, int id2, int id3)
+        {
+            List<System.DateTime> Fechas = CarteleraServicio.carteleraServicio.ObtenerLasFechasDePelicula(id2, id3, id); //idPelicula, idSede y idVersion
+
+
+
+            Fechas = FechaServicio.fechaServicio.FiltrarFechasRepetidas(Fechas); //Para no repetir fechas 
+
+
+
+            List<String> FechasEnString = FechaServicio.fechaServicio.ConvertirAString(Fechas);
+
+            return Json(new { items = FechasEnString }, JsonRequestBehavior.AllowGet);
+        }
+
+        
+        public JsonResult ObtenerHorarios(int id, int id2, int id3, string id4)
+        {
+
+            System.DateTime FechaRecibida = FechaServicio.fechaServicio.ConvertirAFecha(id4);
+
+            List<System.DateTime> ListaDeHorarios = CarteleraServicio.carteleraServicio.ObtenerLasHorasDeLaPeliculas(id2, id3, id, FechaRecibida);
+
+            List<HoraDTO> HorariosJSON = FechaServicio.fechaServicio.ConvertirHoraAString(ListaDeHorarios);
+
+
+            return Json(new { items = HorariosJSON }, JsonRequestBehavior.AllowGet);
         }
 
     }

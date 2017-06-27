@@ -119,6 +119,7 @@
     <Compile Include="Controllers\ControllerBase.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PeliculasController.cs" />
+    <Compile Include="DTO\HoraDTO.cs" />
     <Compile Include="DTO\SedeDTO.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -177,6 +178,7 @@
     <Compile Include="Repositorios\RepositorioManager.cs" />
     <Compile Include="Repositorios\ReservaRepositorio.cs" />
     <Compile Include="Repositorios\SedeRepositorio.cs" />
+    <Compile Include="Repositorios\TiposDocumentosRepositorio.cs" />
     <Compile Include="Repositorios\UsuarioRepositorio.cs" />
     <Compile Include="Repositorios\VersioneRepositorio.cs" />
     <Compile Include="Servicios\ArchivoServicio.cs" />
@@ -187,6 +189,7 @@
     <Compile Include="Servicios\PeliculaServicio.cs" />
     <Compile Include="Servicios\ReservaServicio.cs" />
     <Compile Include="Servicios\SedeServicio.cs" />
+    <Compile Include="Servicios\TiposDocumentosServicio.cs" />
     <Compile Include="Servicios\UsuarioServicio.cs" />
     <Compile Include="Servicios\VersioneServicio.cs" />
   </ItemGroup>
@@ -410,6 +413,9 @@
     <Content Include="ryrych-rcarousel\examples\images\html_slides\.directory" />
     <Content Include="ryrych-rcarousel\examples\remote.json" />
     <Content Include="ryrych-rcarousel\widget\license" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Peliculas\Copia de Reserva.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
