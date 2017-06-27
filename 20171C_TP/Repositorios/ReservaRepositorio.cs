@@ -14,6 +14,7 @@ namespace _20171C_TP.Repositorios
                         internal void AgregarReserva(Reserva reserva)
                         {
 
+                                        reserva.FechaCarga = System.DateTime.Now;
                             MiContexto.Reservas.Add(reserva);
                             MiContexto.SaveChanges();
 

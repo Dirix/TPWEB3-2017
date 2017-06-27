@@ -21,6 +21,12 @@ namespace _20171C_TP.Repositorios
 
         }
 
+        internal Versione ObtenerVersionPorId(int id)
+        {
+
+            return MiContexto.Versiones.FirstOrDefault(e => e.IdVersion == id);
+
+        }
 
     }
 }

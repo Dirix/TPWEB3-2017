@@ -19,5 +19,12 @@ namespace _20171C_TP.Servicios
 
         }
 
+        public Versione ObtenerVersionPorId(int idVersione)
+        {
+
+            return RepositorioManager.Versiones.ObtenerVersionPorId(idVersione);
+
+        }
+
     }
 }

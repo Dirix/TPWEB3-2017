@@ -1,0 +1,54 @@
+﻿@model _20171C_TP.DTO.PreReservaDTO
+@{
+
+
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+        @{
+            Html.RenderPartial("../_Head");
+        }
+</head>
+<body>
+
+                       <div>
+        @{
+            Html.RenderPartial("../_Navegador");
+        }
+    </div> 
+
+    <div>
+        <form action="~/Peliculas/ConfirmarReserva" method="post">
+        <input type="hidden" value="@Model.IdPelicula" name="idPelicula" />
+        <input type="hidden" value="@Model.IdVersion" name="idVersion" />
+        <input type="hidden" value="@Model.IdSede" name="idSede" />
+        <input type="hidden" value="@Model.HoraInt" name="HoraInt" />
+        <input type="hidden" value="@Model.FechaString" name="FechaString" />
+
+        <input type="hidden" value="@Model.idTipoDocumento" name="idTipoDocumento" />
+        <input type="hidden" value="@Model.NumeroDocumento" name="NumeroDocumento" />
+        <input type="hidden" value="@Model.Correo" name="Correo" />
+        <input type="hidden" value="@Model.Entradas" name="Entradas" />
+
+        <p>@Model.pelicula.Nombre</p>
+        <p>@Model.version.Nombre</p>
+        <p>@Model.sede.Nombre</p>
+        <p>@Model.FechaDate.ToLongDateString()</p>
+        <p>@Model.FechaDate.ToShortTimeString()</p>
+
+        <p>Documento @Model.NumeroDocumento</p>
+        <p>@Model.Correo</p>
+        <p>@Model.Entradas</p>
+
+            <h1>Su reserva ha sido procesada con exito.</h1>        
+            
+            <a href="~/Home/Inicio">Volver al inicio</a>
+        </form>
+    </div>
+</body>
+</html>

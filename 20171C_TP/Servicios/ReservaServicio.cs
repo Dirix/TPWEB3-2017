@@ -1,4 +1,5 @@
 ﻿using _20171C_TP.Controllers;
+using _20171C_TP.DTO;
 using _20171C_TP.Models;
 using System;
 using System.Collections.Generic;
@@ -12,8 +13,22 @@ namespace _20171C_TP.Servicios
 
         public static ReservaServicio reservaServicio = new ReservaServicio();
 
-        public void AgregarReserva(Reserva reserva)
+        public void AgregarReserva(PreReservaDTO preReservaDTO)
         {
+            Reserva reserva = new Reserva();
+
+            reserva.CantidadEntradas = preReservaDTO.Entradas;
+
+            reserva.Email = preReservaDTO.Correo;
+            reserva.FechaHoraInicio = preReservaDTO.FechaDate;
+            reserva.IdPelicula = preReservaDTO.IdPelicula;
+            reserva.IdSede = preReservaDTO.IdSede;
+            reserva.IdTipoDocumento = preReservaDTO.idTipoDocumento;
+            reserva.IdVersion = preReservaDTO.IdVersion;
+            reserva.NumeroDocumento = preReservaDTO.NumeroDocumento.ToString();
+            reserva.FechaCarga = System.DateTime.Now;
+ 
+
             RepositorioManager.Reservas.AgregarReserva(reserva);
 
         }
@@ -50,6 +65,21 @@ namespace _20171C_TP.Servicios
         {
 
             return RepositorioManager.Reservas.ObtenerReservaPorId(id);
+
+        }
+
+        public PreReservaDTO GenerarPreReserva(PreReservaDTO p)
+        {
+
+            p.FechaDate = FechaServicio.fechaServicio.ConvertirAFecha(p.FechaString);
+            p.FechaDate = p.FechaDate.AddHours(p.HoraInt);
+
+            p.pelicula = PeliculaServicio.peliculaServicio.ObtenerPeliculaPorId(p.IdPelicula);
+            p.sede = SedeServicio.sedeServicio.ObtenerSedePorId(p.IdSede);
+            p.version = VersioneServicio.versioneServicio.ObtenerVersionPorId(p.IdVersion);
+
+
+            return p;
 
         }
 

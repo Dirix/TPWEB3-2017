@@ -1,0 +1,68 @@
+﻿@model _20171C_TP.DTO.PreReservaDTO
+@{
+    int MaximoEntradas = 8;
+    List<_20171C_TP.Models.TiposDocumento> Documentos = ViewBag.TipoDocumentos;
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+        @{
+            Html.RenderPartial("../_Head");
+        }
+</head>
+<body>
+
+                       <div>
+        @{
+            Html.RenderPartial("../_Navegador");
+        }
+    </div> 
+
+    <div>
+        <form action="~/Peliculas/ReservaPreConfirmacion" method="post">
+        <input type="hidden" value="@Model.IdPelicula" name="idPelicula" />
+        <input type="hidden" value="@Model.IdVersion" name="idVersion" />
+        <input type="hidden" value="@Model.IdSede" name="idSede" />
+        <input type="hidden" value="@Model.HoraInt" name="HoraInt" />
+        <input type="hidden" value="@Model.FechaString" name="FechaString" />
+
+        <p>@Model.pelicula.Nombre</p>
+        <p>@Model.version.Nombre</p>
+        <p>@Model.sede.Nombre</p>
+        <p>@Model.FechaDate.ToLongDateString()</p>
+        <p>@Model.FechaDate.ToShortTimeString()</p>
+
+                        <div class="form-group">
+                <select id="idTipoDNI" name="idTipoDocumento" class="form-control">
+                    @foreach (var i in Documentos)
+                    {
+                    <option value="@i.IdTipoDocumento">@i.Descripcion</option>
+                    }
+                </select>
+                 <input id="idDocumento" type="text" class="form-control" name="NumeroDocumento" value="" />
+            </div>
+
+            <div class="form-group">
+                 <label for="name">Correo</label>
+                 <input id="idCorreo" type="text" class="form-control" name="Correo" value="" />
+            </div>
+
+            <div class="form-group">
+                <label for="name">Entradas</label>
+                <select id="idEntradas" name="Entradas" class="form-control">
+                    @for (int i=1;i<=MaximoEntradas;i++)
+                    {
+                    <option value="@i">@i</option>
+                    }
+                </select>
+            </div>
+            
+            <input type="submit" class="btn btn-info" value="Comprar" id="submit" />
+        </form>
+    </div>
+</body>
+</html>

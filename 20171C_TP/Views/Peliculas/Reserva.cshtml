@@ -10,13 +10,11 @@
 
 <html>
     <head>
-        <title>Pelicula @Model.Nombre</title>
-            <link href="../../css/bootstrap.css" rel="stylesheet">
-    <link href="~/css/bootstrap-select.min.css" rel="stylesheet" />
-    <link href="~/css/_AdministracionLayout.css" rel="stylesheet" />
-    <script src="../../js/jquery.min.js"></script>
-    <script src="../../js/bootstrap.min.js"></script>
-    <script src="~/js/bootstrap-select.min.js"></script>
+                <div>
+        @{
+            Html.RenderPartial("../_Head");
+        }
+
     <script src="~/js/_AdministracionLayout.js"></script>
     <script src="~/js/Reserva.js"></script>
 
@@ -35,7 +33,7 @@
         }
     </div> 
 
-                <form action="SedesAgregar" method="post">
+                <form action="~/Peliculas/ReservaDatos" method="post">
     		<nav class="navbar navbar-default" role="navigation">
 		  <!-- El logotipo y el icono que despliega el menú se agrupan
 			   para mostrarlos mejor en los dispositivos móviles -->
@@ -59,7 +57,9 @@
 					<div class="busqueda navbar-left" role="search" action="#" method='get'>
 
 
-                         <select id="versiones" name="idVersione" value="asd" class="form-control"" data-live-search="true" onchange="obtenerSedes(@Model.IdPelicula)">
+                        <input type="hidden" name="idPelicula" value="@Model.IdPelicula" />
+
+                         <select id="versiones" name="idVersion" value="asd" class="form-control"" data-live-search="true" onchange="obtenerSedes(@Model.IdPelicula)">
                             
                             <option value="" disabled selected hidden>Elija un idioma</option>
                              @foreach (var i in ListaDeVersiones)
@@ -72,19 +72,21 @@
                         <option value="" disabled selected hidden>Elija una sede</option>
                         </select>
 
-                        <select id="dias" name="idDias" class="form-control" onchange="obtenerHoras(@Model.IdPelicula)">
+                        <select id="dias" name="FechaString" class="form-control" onchange="obtenerHoras(@Model.IdPelicula)">
                         <option value="" disabled selected hidden>Elija una fecha</option>
                         </select>
 
-                        <select id="horarios" name="idHorario" class="form-control">
+                        <select id="horarios" name="HoraInt" class="form-control">
                         <option value="" disabled selected hidden>Elija una hora</option>
                         </select>
+
+                        <input type="submit" class="btn btn-info" value="Comprar" id="submit" />
 
 					</div>
      
 					
 
-					
+		
 
 		
 
@@ -119,30 +121,7 @@
 
  
 
-            <div class="form-group">
-                <select id="idTipoDNI" name="idTipoDocumento" class="form-control">
-                    @foreach (var i in Documentos)
-                    {
-                    <option value="@i.IdTipoDocumento">@i.Descripcion</option>
-                    }
-                </select>
-                 <input id="idDocumento" type="text" class="form-control" name="NumeroDocumento" value="" />
-            </div>
 
-            <div class="form-group">
-                 <label for="name">Correo</label>
-                 <input id="idCorreo" type="text" class="form-control" name="Email" value="" />
-            </div>
-
-            <div class="form-group">
-                <label for="name">Entradas</label>
-                <select id="idEntradas" name="CantidadEntradas" class="form-control">
-                    @for (int i=1;i<=MaximoEntradas;i++)
-                    {
-                    <option value="@i">@i</option>
-                    }
-                </select>
-            </div>
      
         </div>
 

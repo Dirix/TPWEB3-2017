@@ -40,15 +40,29 @@ namespace _20171C_TP.Controllers
 
 
         [HttpPost]
-        public ActionResult ReservaDatos(int idPelicula, int idVersion, int idSede, String Fecha, int Hora)
+        public ActionResult ReservaDatos(PreReservaDTO preReservaDTO)
+        {
+            ViewBag.TipoDocumentos = TiposDocumentosServicio.tiposDocumentosServicio.ObtenerListaDeTipos();
+            return View(ReservaServicio.reservaServicio.GenerarPreReserva(preReservaDTO));
+        }
+
+        [HttpPost]
+        public ActionResult ReservaPreConfirmacion(PreReservaDTO preReservaDTO)
         {
 
-            return View();
+
+            return View(ReservaServicio.reservaServicio.GenerarPreReserva(preReservaDTO));
+        }
+
+        [HttpPost]
+        public ActionResult ConfirmarReserva(PreReservaDTO preReservaDTO)
+        {
+            TempData["Mensaje"] = "Su reserva se ha procesado con exito";
+
+            ReservaServicio.reservaServicio.AgregarReserva(preReservaDTO);
+
+            return View(ReservaServicio.reservaServicio.GenerarPreReserva(preReservaDTO));
         }  
-
-
-
-
 
         public JsonResult ObtenerSedesPorVersion(int id, int id2)
         {
