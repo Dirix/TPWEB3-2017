@@ -120,6 +120,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PeliculasController.cs" />
     <Compile Include="DTO\HoraDTO.cs" />
+    <Compile Include="DTO\PreReservaDTO.cs" />
     <Compile Include="DTO\SedeDTO.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -416,6 +417,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Peliculas\Copia de Reserva.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Peliculas\ReservaDatos.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Peliculas\ReservaPreConfirmacion.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Peliculas\ConfirmarReserva.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
