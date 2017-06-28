@@ -1,0 +1,132 @@
+﻿@model _20171C_TP.Models.Cartelera 
+@{
+    List<_20171C_TP.Models.Pelicula> ListaDePeliculas = ViewBag.ListaDePeliculas;
+    List<_20171C_TP.Models.Sede> ListaDeSedes = ViewBag.ListaDeSedes;
+    List<_20171C_TP.Models.Versione> ListaDeVersiones = ViewBag.ListaDeVersiones;
+    String FechaInicio = Model.FechaInicio.Year + "-" + Model.FechaInicio.Month + "-" + Model.FechaInicio.Day;
+}
+
+@{
+    Layout = "~/Views/Administracion/_AdministracionLayout.cshtml";
+}
+
+<h2>Carteleras</h2>
+
+
+<body>
+    <div>
+        <form action="~/Administracion/CartelerasEditar" method="post">
+            <fieldset>
+                <div class="col-sm-6">
+                    <legend>Editar Cartelera</legend>
+
+                    <input type="hidden" name="idCartelera" value="@Model.IdCartelera" />
+
+                    <div class="form-group">
+                        <label for="name">Pelicula</label>
+                        <select name="idPelicula" class="selectpicker" data-live-search="true">
+                            @foreach (var i in ListaDePeliculas)
+                            {
+
+                                if (i.IdPelicula == Model.IdPelicula)
+                                {
+                                    <option value="@i.IdPelicula" selected="selected">@i.Nombre</option>
+                                }
+                                else
+                                {
+                                    <option value="@i.IdPelicula">@i.Nombre</option>
+                                }
+                                
+                            }
+
+
+
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="name">Version</label>
+                        <select name="IdVersion" class="selectpicker" data-live-search="true">
+                            @foreach (var i in ListaDeVersiones)
+                            {
+
+                                
+                                if (i.IdVersion == Model.IdVersion)
+                                {
+                                    <option value="@i.IdVersion" selected="selected">@i.Nombre</option>
+                                }
+                                else
+                                {
+                                    <option value="@i.IdVersion">@i.Nombre</option>
+                                }
+                                
+                            }
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="name">Sede</label>
+                        <select name="IdSede" class="selectpicker" data-live-search="true">
+                            @foreach (var i in ListaDeSedes)
+                            {
+                                if (i.IdSede == Model.IdSede)
+                                {
+                                    <option value="@i.IdSede" selected="selected">@i.Nombre</option>
+                                }
+                                else
+                                {
+                                <option value="@i.IdSede">@i.Nombre</option>
+                                }                                
+ 
+                            }
+                        </select>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="name">Fecha de inicio</label>
+                        <div><input type="date" id="fecha" class="form-control" name="FechaInicio" value="@Model.FechaInicio.ToString("yyyy-MM-dd")" /></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="name">Fecha de finalizacion</label>
+                        <input type="date" id="fecha" class="form-control" name="FechaFin" value="@Model.FechaInicio.ToString("yyyy-MM-dd")" />
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="name">Sala</label>
+                        <input type="text" class="form-control" name="NumeroSala" value="@Model.NumeroSala" />
+                    </div>
+
+                     <div class="form-group">
+                        <label for="name">Horario</label>
+                        <div><input type="text" class="form-control" name="HoraInicio" value="@Model.HoraInicio" /></div>
+                    </div>
+
+                     <div class="form-group">
+                        <label for="name">Dias de la funcion</label>
+                        <input name="Lunes" type="checkbox" value="true" /> Lunes
+                        <input name="Martes" type="checkbox" value="true" /> Martes
+                        <input name="Miercoles" type="checkbox" value="true" /> Miercoles
+                        <input name="Jueves" type="checkbox" value="true" /> Jueves
+                        <input name="Viernes" type="checkbox" value="true" /> Viernes
+                        <input name="Sabado" type="checkbox" value="true" /> Sabado
+                        <input name="Domingo" type="checkbox" value="true" /> Domingo
+                     </div>
+
+                    <div class="form-group">
+                        <input type="submit" class="btn btn-info" value="Editar Funcion" />
+                    </div>
+                    <div class="form-group">
+                        <a href="./" class="btn btn-warning">Regresar</a>
+                    </div>
+                </div>
+
+            </fieldset>
+
+        </form>
+
+    </div>
+
+</body>

@@ -1,0 +1,51 @@
+﻿@model List<_20171C_TP.Models.Pelicula>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pl" xml:lang="pl">
+	<head>
+        @{
+         Html.RenderPartial("../_Head");
+         Html.RenderPartial("../_HeadCarrusel");
+        }
+
+<link href="~/css/errores.css" rel="stylesheet">
+
+
+	</head>
+	<body>
+
+		
+    <div>
+        @{
+            Html.RenderPartial("../_Navegador");
+        }
+    </div>    
+
+        <div class="container">
+  <div class="row">
+    <div class="span12">
+      <div class="hero-unit center">
+          <br />
+          <h1>Se ha producido un error</h1>
+          <br />
+          <p>Lo sentimos mucho. Se ha producido un error al intentar procesar su solicitud.</p>
+          <p>Le rogamos verifique nuevamente el funcionamiento</p>
+          <br />
+          <a href="~/Home/Inicio" class="btn btn-large btn-info"><i class="icon-home icon-white"></i> Volver al sitio principal</a>
+          <br />
+        </div>
+
+
+
+ 
+
+  
+    </div>
+  </div>
+</div>
+
+
+
+
+    </body>
+</html>

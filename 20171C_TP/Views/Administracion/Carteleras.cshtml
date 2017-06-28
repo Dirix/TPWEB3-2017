@@ -30,6 +30,7 @@
             <th>Fecha de inicio</th>
             <th>Fecha de finalizacion</th>
             <th></th>
+            <th></th>
         </thead>
 
         @foreach (var i in @Model)
@@ -43,6 +44,7 @@
                 <td>@i.FechaInicio.ToShortDateString()</td>
                 <td>@i.FechaFin.ToShortDateString()</td>
                 <td><a href="CartelerasEditar/@i.IdCartelera" class="btn btn-warning">Editar</a></td>
+                <td><a href="CartelerasBorrar/@i.IdCartelera" class="btn btn-warning">Eliminar</a></td>
             </tr>
 
  

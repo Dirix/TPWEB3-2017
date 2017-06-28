@@ -30,8 +30,7 @@ namespace _20171C_TP.Controllers
 
             if (Session["usuario"] == null)
             {
-                TempData["UrlAdmin"] = Request.Url; //Guardamos la URL
-                ViewBag.UrlAdmin = Request.Url; //Guardamos la URL
+ 
                 return Redirect("../Home/Login"); //Redireccionamos al login
             }
 
@@ -46,11 +45,11 @@ namespace _20171C_TP.Controllers
 
         public ActionResult Peliculas()
         {
+            Session["UrlAdmin"] = "Administracion/Peliculas"; //Guardamos la URL
 
             if (Session["usuario"] == null)
             {
-                TempData["UrlAdmin"] = Request.Url; //Guardamos la URL
-                ViewBag.UrlAdmin = Request.Url; //Guardamos la URL
+
                 return Redirect("../Home/Login"); //Redireccionamos al login
             }
 
@@ -69,8 +68,7 @@ namespace _20171C_TP.Controllers
 
             if (Session["usuario"] == null)
             {
-                TempData["UrlAdmin"] = Request.Url; //Guardamos la URL
-                ViewBag.UrlAdmin = Request.Url; //Guardamos la URL
+                TempData["UrlAdmin"] = Request.Url.ToString(); //Guardamos la URL
                 return Redirect("../Home/Login"); //Redireccionamos al login
             }
 
@@ -87,8 +85,7 @@ namespace _20171C_TP.Controllers
 
             if (Session["usuario"] == null)
             {
-                TempData["UrlAdmin"] = Request.Url; //Guardamos la URL
-                ViewBag.UrlAdmin = Request.Url; //Guardamos la URL
+                TempData["UrlAdmin"] = Request.Url.ToString(); //Guardamos la URL
                 return Redirect("../Home/Login"); //Redireccionamos al login
             }
 
@@ -129,8 +126,7 @@ namespace _20171C_TP.Controllers
 
             if (Session["usuario"] == null)
             {
-                TempData["UrlAdmin"] = Request.Url; //Guardamos la URL
-                ViewBag.UrlAdmin = Request.Url; //Guardamos la URL
+                TempData["UrlAdmin"] = Request.Url.ToString(); //Guardamos la URL
                 return Redirect("../Home/Login"); //Redireccionamos al login
             }
 
@@ -142,19 +138,20 @@ namespace _20171C_TP.Controllers
         }
 
         [HttpPost]
-        public ActionResult PeliculasEditar(Pelicula pelicula, HttpPostedFileBase file)
+        public ActionResult PeliculasEditar(Pelicula pelicula/*, HttpPostedFileBase file*/)
         {
+
 
             if (Session["usuario"] == null)
             {
-                TempData["UrlAdmin"] = Request.Url; //Guardamos la URL
-                ViewBag.UrlAdmin = Request.Url; //Guardamos la URL
+                TempData["UrlAdmin"] = Request.Url.ToString(); //Guardamos la URL
                 return Redirect("../Home/Login"); //Redireccionamos al login
             }
 
             TempData["mensaje"] = "La pelicula ha sido editada exitosamente";
 
             //Subimos archivo
+            /*
             if (file == null)
             {
                 TempData["mensaje"] = "Ocurrio un error con la imagen subida";
@@ -172,7 +169,7 @@ namespace _20171C_TP.Controllers
             pelicula.Imagen = directorio;
 
             //Fin de subida de archivo
-
+            */
 
             PeliculaServicio.peliculaServicio.EditarPelicula(pelicula);
 
@@ -193,8 +190,7 @@ namespace _20171C_TP.Controllers
 
             if (Session["usuario"] == null)
             {
-                TempData["UrlAdmin"] = Request.Url; //Guardamos la URL
-                ViewBag.UrlAdmin = Request.Url; //Guardamos la URL
+                TempData["UrlAdmin"] = Request.Url.ToString(); //Guardamos la URL
                 return Redirect("../Home/Login"); //Redireccionamos al login
             }
 
@@ -207,8 +203,7 @@ namespace _20171C_TP.Controllers
         {
             if (Session["usuario"] == null)
             {
-                TempData["UrlAdmin"] = Request.Url; //Guardamos la URL
-                ViewBag.UrlAdmin = Request.Url; //Guardamos la URL
+                TempData["UrlAdmin"] = Request.Url.ToString(); //Guardamos la URL
                 return Redirect("../Home/Login"); //Redireccionamos al login
             }
 
@@ -221,8 +216,7 @@ namespace _20171C_TP.Controllers
 
             if (Session["usuario"] == null)
             {
-                TempData["UrlAdmin"] = Request.Url; //Guardamos la URL
-                ViewBag.UrlAdmin = Request.Url; //Guardamos la URL
+                TempData["UrlAdmin"] = Request.Url.ToString(); //Guardamos la URL
                 return Redirect("../Home/Login"); //Redireccionamos al login
             }
 
@@ -239,8 +233,7 @@ namespace _20171C_TP.Controllers
 
             if (Session["usuario"] == null)
             {
-                TempData["UrlAdmin"] = Request.Url; //Guardamos la URL
-                ViewBag.UrlAdmin = Request.Url; //Guardamos la URL
+                TempData["UrlAdmin"] = Request.Url.ToString(); //Guardamos la URL
                 return Redirect("../Home/Login"); //Redireccionamos al login
             }
 
@@ -253,8 +246,7 @@ namespace _20171C_TP.Controllers
 
             if (Session["usuario"] == null)
             {
-                TempData["UrlAdmin"] = Request.Url; //Guardamos la URL
-                ViewBag.UrlAdmin = Request.Url; //Guardamos la URL
+                TempData["UrlAdmin"] = Request.Url.ToString(); //Guardamos la URL
                 return Redirect("../Home/Login"); //Redireccionamos al login
             }
 
@@ -275,8 +267,7 @@ namespace _20171C_TP.Controllers
 
             if (Session["usuario"] == null)
             {
-                TempData["UrlAdmin"] = Request.Url; //Guardamos la URL
-                ViewBag.UrlAdmin = Request.Url; //Guardamos la URL
+                TempData["UrlAdmin"] = Request.Url.ToString(); //Guardamos la URL
                 return Redirect("../Home/Login"); //Redireccionamos al login
             }
 
@@ -299,18 +290,84 @@ namespace _20171C_TP.Controllers
 
         }
 
-                            
+        public ActionResult CartelerasEditar(int id)
+        {
+
+
+            if (Session["usuario"] == null)
+            {
+                TempData["UrlAdmin"] = Request.Url.ToString(); //Guardamos la URL
+                return Redirect("../Home/Login"); //Redireccionamos al login
+            }
+
+
+
+            ViewBag.ListaDeSedes = SedeServicio.sedeServicio.ObtenerListaDeSedes();
+            ViewBag.ListaDePeliculas = PeliculaServicio.peliculaServicio.ObtenerListaDePeliculas();
+            ViewBag.ListaDeVersiones = VersioneServicio.versioneServicio.ObtenerListaDeVersiones();
+
+
+
+            return View(CarteleraServicio.carteleraServicio.ObtenerCarteleraPorId(id));
+
+        }
+
+        [HttpPost]
+        public ActionResult CartelerasEditar(Cartelera cartelera)
+        {
+
+
+            if (Session["usuario"] == null)
+            {
+                TempData["UrlAdmin"] = Request.Url.ToString(); //Guardamos la URL
+                return Redirect("../Home/Login"); //Redireccionamos al login
+            }
+
+            if (!CarteleraServicio.carteleraServicio.ComprobarDisponibilidad(cartelera))
+            {
+                TempData["mensaje"] = "No hay disponibilidad para el periodo, sede y sala seleccionada";
+                return Redirect("~/Administracion/Carteleras");
+            }
+
+            TempData["mensaje"] = "La cartelera ha sido editada exitosamente";
+
+
+            CarteleraServicio.carteleraServicio.EditarCartelera(cartelera);
+
+
+            return Redirect("~/administracion/carteleras");
+
+        }
+
+
+        public ActionResult CartelerasBorrar(int id)
+        {
+
+
+            if (Session["usuario"] == null)
+            {
+                TempData["UrlAdmin"] = Request.Url.ToString(); //Guardamos la URL
+                return Redirect("../Home/Login"); //Redireccionamos al login
+            }
+
+            CarteleraServicio.carteleraServicio.BorrarCarteleraPorId(id);
+
+            TempData["mensaje"] = "La cartelera se ha borrado correctamente";
+
+            return Redirect("~/administracion/carteleras");
+
+        }  
+
         public ActionResult CartelerasAgregar()
         {
 
             if (Session["usuario"] == null)
             {
-                TempData["UrlAdmin"] = Request.Url; //Guardamos la URL
-                ViewBag.UrlAdmin = Request.Url; //Guardamos la URL
+                TempData["UrlAdmin"] = Request.Url.ToString(); //Guardamos la URL
                 return Redirect("../Home/Login"); //Redireccionamos al login
             }
 
-
+            
 
             ViewBag.ListaDeSedes = SedeServicio.sedeServicio.ObtenerListaDeSedes();
             ViewBag.ListaDePeliculas = PeliculaServicio.peliculaServicio.ObtenerListaDePeliculas();
@@ -327,8 +384,7 @@ namespace _20171C_TP.Controllers
 
             if (Session["usuario"] == null)
             {
-                TempData["UrlAdmin"] = Request.Url; //Guardamos la URL
-                ViewBag.UrlAdmin = Request.Url; //Guardamos la URL
+                TempData["UrlAdmin"] = Request.Url.ToString(); //Guardamos la URL
                 return Redirect("../Home/Login"); //Redireccionamos al login
             }
             
@@ -367,8 +423,7 @@ namespace _20171C_TP.Controllers
 
             if (Session["usuario"] == null)
             {
-                TempData["UrlAdmin"] = Request.Url; //Guardamos la URL
-                ViewBag.UrlAdmin = Request.Url; //Guardamos la URL
+                TempData["UrlAdmin"] = Request.Url.ToString(); //Guardamos la URL
                 return Redirect("../Home/Login"); //Redireccionamos al login
             }
 
@@ -382,8 +437,7 @@ namespace _20171C_TP.Controllers
 
             if (Session["usuario"] == null)
             {
-                TempData["UrlAdmin"] = Request.Url; //Guardamos la URL
-                ViewBag.UrlAdmin = Request.Url; //Guardamos la URL
+                TempData["UrlAdmin"] = Request.Url.ToString(); //Guardamos la URL
                 return Redirect("../Home/Login"); //Redireccionamos al login
             }
 

@@ -81,7 +81,6 @@ namespace _20171C_TP.Controllers
             Fechas = FechaServicio.fechaServicio.FiltrarFechasRepetidas(Fechas); //Para no repetir fechas 
 
 
-
             List<String> FechasEnString = FechaServicio.fechaServicio.ConvertirAString(Fechas);
 
             return Json(new { items = FechasEnString }, JsonRequestBehavior.AllowGet);
@@ -92,6 +91,8 @@ namespace _20171C_TP.Controllers
         {
 
             System.DateTime FechaRecibida = FechaServicio.fechaServicio.ConvertirAFecha(id4);
+
+            var test = FechaRecibida;
 
             List<System.DateTime> ListaDeHorarios = CarteleraServicio.carteleraServicio.ObtenerLasHorasDeLaPeliculas(id2, id3, id, FechaRecibida);
 

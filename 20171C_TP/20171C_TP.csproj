@@ -117,6 +117,7 @@
   <ItemGroup>
     <Compile Include="Controllers\AdministracionController.cs" />
     <Compile Include="Controllers\ControllerBase.cs" />
+    <Compile Include="Controllers\ErroresController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PeliculasController.cs" />
     <Compile Include="DTO\HoraDTO.cs" />
@@ -437,6 +438,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\_HeadReservas.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Administracion\CartelerasEditar.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Errores\ErrorDefault.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

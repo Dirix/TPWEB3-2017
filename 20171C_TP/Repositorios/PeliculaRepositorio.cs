@@ -39,7 +39,7 @@ namespace _20171C_TP.Repositorios
 
 
                     MiContexto.Peliculas.FirstOrDefault(e => e.IdPelicula == pelicula.IdPelicula).Descripcion = pelicula.Descripcion;
-                    MiContexto.Peliculas.FirstOrDefault(e => e.IdPelicula == pelicula.IdPelicula).Imagen = pelicula.Imagen;
+                    //MiContexto.Peliculas.FirstOrDefault(e => e.IdPelicula == pelicula.IdPelicula).Imagen = pelicula.Imagen;
                     MiContexto.Peliculas.FirstOrDefault(e => e.IdPelicula == pelicula.IdPelicula).IdCalificacion = pelicula.IdCalificacion;
                     MiContexto.Peliculas.FirstOrDefault(e => e.IdPelicula == pelicula.IdPelicula).IdGenero = pelicula.IdGenero;
                     MiContexto.Peliculas.FirstOrDefault(e => e.IdPelicula == pelicula.IdPelicula).Duracion = pelicula.Duracion;

@@ -26,7 +26,13 @@ namespace _20171C_TP.Servicios
 
         }
 
- 
+        public void BorrarCarteleraPorId(int idCartelera)
+        {
+
+            Cartelera cartelera = CarteleraServicio.carteleraServicio.ObtenerCarteleraPorId(idCartelera);
+            RepositorioManager.Carteleras.BorrarCarteleraPorId(cartelera);
+
+        }
 
         public List<Cartelera> ObtenerListaDeCarteleras()
         {

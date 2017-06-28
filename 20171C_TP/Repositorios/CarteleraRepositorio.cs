@@ -76,25 +76,58 @@ namespace _20171C_TP.Repositorios
 
         }
 
-        internal void EditarCartelera(Cartelera cartelera)
+        internal void BorrarCarteleraPorId(Cartelera cartelera)
         {
 
-            MiContexto.Carteleras.FirstOrDefault(e => e.IdCartelera == cartelera.IdCartelera).Domingo = cartelera.Domingo;            MiContexto.Carteleras.FirstOrDefault(e => e.IdCartelera == cartelera.IdCartelera).Domingo = cartelera.Domingo;
-            MiContexto.Carteleras.FirstOrDefault(e => e.IdCartelera == cartelera.IdCartelera).FechaCarga = cartelera.FechaCarga;
-            MiContexto.Carteleras.FirstOrDefault(e => e.IdCartelera == cartelera.IdCartelera).FechaFin = cartelera.FechaFin;
-            MiContexto.Carteleras.FirstOrDefault(e => e.IdCartelera == cartelera.IdCartelera).FechaInicio = cartelera.FechaInicio;
+            MiContexto.Carteleras.Remove(cartelera);
+            MiContexto.SaveChanges();
+
+
+
+        }
+
+        internal void EditarCartelera(Cartelera cartelera)
+        {
+            if (!cartelera.Domingo == null)
+            {
+                MiContexto.Carteleras.FirstOrDefault(e => e.IdCartelera == cartelera.IdCartelera).Domingo = true;
+            }
+            if (!cartelera.Lunes == null)
+            {
+                MiContexto.Carteleras.FirstOrDefault(e => e.IdCartelera == cartelera.IdCartelera).Lunes = true;
+            }
+            if (!cartelera.Martes == null)
+            {
+                MiContexto.Carteleras.FirstOrDefault(e => e.IdCartelera == cartelera.IdCartelera).Martes = true;
+            }
+            if (!cartelera.Miercoles == null)
+            {
+                MiContexto.Carteleras.FirstOrDefault(e => e.IdCartelera == cartelera.IdCartelera).Miercoles = true;
+            }
+            if (!cartelera.Jueves == null)
+            {
+                MiContexto.Carteleras.FirstOrDefault(e => e.IdCartelera == cartelera.IdCartelera).Jueves = true;
+            }
+            if (!cartelera.Viernes == null)
+            {
+                MiContexto.Carteleras.FirstOrDefault(e => e.IdCartelera == cartelera.IdCartelera).Viernes = true;
+            }
+            if (!cartelera.Sabado == null)
+            {
+                MiContexto.Carteleras.FirstOrDefault(e => e.IdCartelera == cartelera.IdCartelera).Sabado = true;
+            }
+
+
+
+
             MiContexto.Carteleras.FirstOrDefault(e => e.IdCartelera == cartelera.IdCartelera).HoraInicio = cartelera.HoraInicio;
             MiContexto.Carteleras.FirstOrDefault(e => e.IdCartelera == cartelera.IdCartelera).IdPelicula = cartelera.IdPelicula;
             MiContexto.Carteleras.FirstOrDefault(e => e.IdCartelera == cartelera.IdCartelera).IdSede = cartelera.IdSede;
-
             MiContexto.Carteleras.FirstOrDefault(e => e.IdCartelera == cartelera.IdCartelera).IdVersion = cartelera.IdVersion;
-            MiContexto.Carteleras.FirstOrDefault(e => e.IdCartelera == cartelera.IdCartelera).Jueves = cartelera.Jueves;
-            MiContexto.Carteleras.FirstOrDefault(e => e.IdCartelera == cartelera.IdCartelera).Lunes = cartelera.Lunes;
-            MiContexto.Carteleras.FirstOrDefault(e => e.IdCartelera == cartelera.IdCartelera).Martes = cartelera.Martes;
-            MiContexto.Carteleras.FirstOrDefault(e => e.IdCartelera == cartelera.IdCartelera).Miercoles = cartelera.Miercoles;
             MiContexto.Carteleras.FirstOrDefault(e => e.IdCartelera == cartelera.IdCartelera).NumeroSala = cartelera.NumeroSala;
-            MiContexto.Carteleras.FirstOrDefault(e => e.IdCartelera == cartelera.IdCartelera).Sabado = cartelera.Sabado;
-            MiContexto.Carteleras.FirstOrDefault(e => e.IdCartelera == cartelera.IdCartelera).Viernes = cartelera.Viernes;
+
+            MiContexto.Carteleras.FirstOrDefault(e => e.IdCartelera == cartelera.IdCartelera).FechaFin = cartelera.FechaFin;
+            MiContexto.Carteleras.FirstOrDefault(e => e.IdCartelera == cartelera.IdCartelera).FechaInicio = cartelera.FechaInicio;
 
             MiContexto.SaveChanges();
 
@@ -146,7 +179,7 @@ namespace _20171C_TP.Repositorios
              List<Pelicula> lista = new List<Pelicula>();
 
             //Consulta SQL
-            
+             MiContexto.Peliculas.ToList();
 
             var peliculas = from peliculasCartelera in MiContexto.Carteleras
                       where peliculasCartelera.FechaFin >= FechaActual
@@ -163,7 +196,7 @@ namespace _20171C_TP.Repositorios
 
     
                           }
-
+            
             return lista;
 
         }

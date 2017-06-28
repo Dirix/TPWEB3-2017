@@ -1,0 +1,36 @@
+.center {text-align: center; margin-left: auto; margin-right: auto; margin-bottom: auto; margin-top: auto;}
+.container{
+	
+	  opacity: 0.75;
+  filter:  alpha(opacity=80);
+}
+body{
+
+    background: url("../Imagenes/fondo1.jpg");
+    
+}
+
+h1
+ {
+    color: #DF2121;
+    font: 49px/1 Anton, sans-serif;
+	
+	    text-shadow:
+   -3px -3px 0 black,
+    3px -3px 0 black,
+   -3px 3px 0 black,
+    3px 3px 0 black;
+}
+
+p{
+    color: white;
+    font: 22px/1 Anton, sans-serif;
+
+	    color: #000;
+ 
+    text-shadow:
+   -1px -1px 0 #fff,
+    1px -1px 0 #fff,
+   -1px 1px 0 #fff,
+    1px 1px 0 #fff;
+}

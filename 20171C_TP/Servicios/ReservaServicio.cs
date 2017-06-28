@@ -71,6 +71,7 @@ namespace _20171C_TP.Servicios
         public PreReservaDTO GenerarPreReserva(PreReservaDTO p)
         {
 
+
             p.FechaDate = FechaServicio.fechaServicio.ConvertirAFecha(p.FechaString);
             p.FechaDate = p.FechaDate.AddHours(p.HoraInt);
 

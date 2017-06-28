@@ -141,8 +141,7 @@ namespace _20171C_TP.Servicios
 
             foreach (var i in Fechas)
              {
-                 FechasEnString.Add(i.ToShortDateString() + " " + i.DayOfWeek);
-
+                 FechasEnString.Add(i.ToString("dd/MM/yyyy") + " " + i.DayOfWeek);
              }
 
             return FechasEnString;
