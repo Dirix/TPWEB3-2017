@@ -24,6 +24,9 @@ namespace _20171C_TP.Controllers
 
 
 
+
+
+
             return View(CarteleraServicio.carteleraServicio.ObtenerPeliculasPorFecha());
         }
 
@@ -37,6 +40,8 @@ namespace _20171C_TP.Controllers
         {
             if (UsuarioServicio.usuarioServicio.Autenticar(usuario) == true)
             {
+
+
                 Session["usuario"] = usuario.NombreUsuario;
                 return Redirect("../administracion/inicio");
             }

@@ -71,6 +71,7 @@ namespace _20171C_TP.Repositorios
 
             MiContexto.Carteleras.Add(cartelera);
             MiContexto.SaveChanges();
+   
 
 
         }
@@ -179,6 +180,11 @@ namespace _20171C_TP.Repositorios
 
         internal List<Cartelera> ObtenerListaDeCarteleras()
         {
+
+            //Tengo que actualizar estos registros para que pueda funcionar la vista
+            MiContexto.Peliculas.ToList();
+            MiContexto.Sedes.ToList();
+            MiContexto.Versiones.ToList();
 
             return MiContexto.Carteleras.ToList();
 

@@ -18,6 +18,10 @@ namespace _20171C_TP.Repositorios
                 internal void AgregarPelicula(Pelicula pelicula)
                 {
 
+                    //Tengo que actualizar estos registros para que pueda funcionar la vista
+                    MiContexto.Calificaciones.ToList();
+                    MiContexto.Generos.ToList();
+
                     pelicula.FechaCarga = new DateTime(2014, 4, 4);
                     MiContexto.Peliculas.Add(pelicula);
                     MiContexto.SaveChanges();

@@ -84,16 +84,21 @@
 	<body>
 
 		
-           <div>
+    <div>
         @{
             Html.RenderPartial("../_Navegador");
         }
     </div>    
 
+@if (Model.Count() >0)
+{
 		<div id="content">
+
 
 			
 			<div id="container">
+
+
 
 				<div id="carousel">
 
@@ -101,7 +106,11 @@
                    {
 					<div id="slide01" class="slide">
 						<a href="~/Peliculas/Reserva/@i.IdPelicula"><img class="ImagenCarrusel" src="@i.Imagen" alt="@i.Descripcion" width="250px" height="250px"/></a>
-						<div class="text">
+						
+                        
+                        <div class="text">
+
+
 							<h1>@i.Nombre</h1>
                             <h2>@i.Genero.Nombre</h2>
                             @if (i.Descripcion.Length<160)
@@ -126,6 +135,7 @@
 				<div id="pages"></div>
 			</div>
 		</div>
+}
 
 
     </body>
